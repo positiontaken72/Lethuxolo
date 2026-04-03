@@ -1,6 +1,5 @@
-import { Search, MapPin, Calendar, Phone, ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,36 +11,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 export function Navbar() {
   return (
     <header className="w-full sticky top-0 z-50 bg-white border-b border-border shadow-sm">
-      {/* Top Utility Bar */}
-      <div className="bg-[#F5F5F5] border-b border-border py-2 px-4 md:px-8 flex justify-between items-center text-xs text-[#555555]">
-        <div className="items-center space-x-6 hidden md:flex">
-          <a href="#services" className="flex items-center hover:text-[#111111] transition-colors">
-            <Calendar className="w-3 h-3 mr-2" />
-            Our Services
-          </a>
-          <a href="#locations" className="flex items-center hover:text-[#111111] transition-colors">
-            <MapPin className="w-3 h-3 mr-2" />
-            Mpumalanga, South Africa
-          </a>
-          <a href="tel:+27000000000" className="flex items-center hover:text-[#111111] transition-colors">
-            <Phone className="w-3 h-3 mr-2" />
-            +27 (0) 000 000 000
-          </a>
-        </div>
-        <div className="w-full md:w-auto flex items-center md:justify-end">
-          <div className="relative w-full md:w-64">
-            <Input
-              type="search"
-              placeholder="Type to start searching"
-              className="h-8 pl-3 pr-8 text-xs bg-white"
-            />
-            <Button variant="ghost" size="icon" className="absolute right-0 top-0 h-8 w-8 text-[#555555]">
-              <Search className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation */}
       <div className="px-4 md:px-8 py-4 flex justify-between items-center bg-white">
         <a href="/" className="flex-shrink-0 flex items-center gap-3">
@@ -50,8 +19,8 @@ export function Navbar() {
             alt="Lethuxolo Trading Logo"
             className="h-12 md:h-14 w-12 md:w-14 object-contain rounded-full"
           />
-          <span className="text-[#111111] font-bold text-lg md:text-xl leading-tight tracking-tight hidden sm:block">
-            Lethuxolo<br />Trading
+          <span className="text-[#111111] font-bold text-lg md:text-xl tracking-tight whitespace-nowrap hidden sm:block">
+            Lethuxolo Trading
           </span>
         </a>
 
