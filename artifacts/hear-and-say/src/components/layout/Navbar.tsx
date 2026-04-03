@@ -19,9 +19,14 @@ export function Navbar() {
             alt="Lethuxolo Trading Logo"
             className="h-12 md:h-14 w-12 md:w-14 object-contain rounded-full"
           />
-          <span className="text-[#111111] font-bold text-lg md:text-xl tracking-tight whitespace-nowrap hidden sm:block">
-            Lethuxolo Trading
-          </span>
+          <div className="hidden sm:flex flex-col">
+            <span className="text-[#111111] font-bold text-lg md:text-xl tracking-tight whitespace-nowrap leading-tight">
+              Lethuxolo Trading
+            </span>
+            <span className="text-[#555555] font-light italic text-xs md:text-sm tracking-wide whitespace-nowrap leading-tight">
+              Inspired by the Impossible
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}

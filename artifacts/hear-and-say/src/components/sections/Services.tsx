@@ -56,7 +56,7 @@ export function Services() {
   const next = () => setCurrentIndex(i => Math.min(maxIndex, i + 1));
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-[#F5F5F5] relative overflow-hidden">
+    <section id="services" className="py-20 md:py-28 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 relative z-10">
 
         {/* Header */}
@@ -103,7 +103,7 @@ export function Services() {
                 id={service.id}
                 className="w-1/3 flex-shrink-0 px-3"
               >
-                <div className="bg-white rounded-[20px] overflow-hidden shadow-sm border border-border/50 flex flex-col group hover:shadow-md transition-shadow duration-300 h-full">
+                <div className="rounded-[20px] overflow-hidden flex flex-col group h-full">
                   <div className="aspect-[4/3] w-full overflow-hidden">
                     <img
                       src={service.image}
