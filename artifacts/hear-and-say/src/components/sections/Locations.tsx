@@ -19,11 +19,11 @@ export function Locations() {
           {/* Card 1: Regional Base */}
           <a
             href="#contact"
-            className="group bg-white rounded-[24px] p-8 md:p-10 border border-border shadow-sm hover:shadow-lg hover:border-[#F2B705]/40 transition-all duration-300 flex flex-col h-full"
+            className="group bg-white rounded-[24px] p-8 md:p-10 border border-border shadow-sm hover:shadow-lg hover:border-[#FFFF00]/40 transition-all duration-300 flex flex-col h-full"
             data-testid="card-regional-base"
           >
-            <div className="w-16 h-16 bg-[#F2B705]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#F2B705]/20 transition-colors">
-              <MapPin className="w-8 h-8 text-[#F2B705]" />
+            <div className="w-16 h-16 bg-[#FFFF00]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#FFFF00]/20 transition-colors">
+              <MapPin className="w-8 h-8 text-[#FFFF00]" />
             </div>
 
             <h3 className="text-2xl font-bold text-[#111111] mb-4">Mpumalanga Base</h3>
@@ -44,8 +44,8 @@ export function Locations() {
             className="group bg-[#111111] rounded-[24px] p-8 md:p-10 shadow-sm hover:shadow-lg hover:shadow-black/20 transition-all duration-300 flex flex-col h-full text-white"
             data-testid="card-onsite-operations"
           >
-            <div className="w-16 h-16 bg-[#F2B705]/20 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#F2B705]/30 transition-colors">
-              <HardHat className="w-8 h-8 text-[#F2B705]" />
+            <div className="w-16 h-16 bg-[#FFFF00]/20 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#FFFF00]/30 transition-colors">
+              <HardHat className="w-8 h-8 text-[#FFFF00]" />
             </div>
 
             <h3 className="text-2xl font-bold text-white mb-4">On-Site Deployment</h3>
@@ -54,7 +54,7 @@ export function Locations() {
               Our teams integrate directly into your operations. From coal mines to industrial facilities, we mobilize quickly and maintain high performance standards throughout.
             </p>
 
-            <div className="inline-flex items-center text-[#F2B705] font-bold text-lg group-hover:translate-x-2 transition-transform">
+            <div className="inline-flex items-center text-[#FFFF00] font-bold text-lg group-hover:translate-x-2 transition-transform">
               View Our Services
               <ArrowRight className="ml-2 w-5 h-5" />
             </div>

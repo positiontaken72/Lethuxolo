@@ -64,7 +64,7 @@ export function Services() {
 
           <Button
             variant="outline"
-            className="shrink-0 bg-white border-border text-[#111111] hover:bg-[#F2B705] hover:border-[#F2B705] hover:text-[#111111] rounded-[10px] h-12 px-6 shadow-none font-semibold"
+            className="shrink-0 bg-white border-border text-[#111111] hover:bg-[#FFFF00] hover:border-[#FFFF00] hover:text-[#111111] rounded-[10px] h-12 px-6 shadow-none font-semibold"
           >
             View All Services
           </Button>
@@ -88,7 +88,7 @@ export function Services() {
                 />
               </div>
               <div className="p-6 md:p-8 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-[#111111] mb-3 leading-tight group-hover:text-[#F2B705] transition-colors">
+                <h3 className="text-xl font-bold text-[#111111] mb-3 leading-tight group-hover:text-[#FFFF00] transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-sm text-[#555555] mb-6 flex-grow leading-relaxed">
@@ -96,7 +96,7 @@ export function Services() {
                 </p>
                 <a
                   href={service.link}
-                  className="inline-flex items-center text-[#111111] font-semibold text-sm hover:text-[#F2B705] transition-colors mt-auto"
+                  className="inline-flex items-center text-[#111111] font-semibold text-sm hover:text-[#FFFF00] transition-colors mt-auto"
                   data-testid={`link-service-${index}`}
                 >
                   Learn More

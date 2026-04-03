@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -56,7 +57,7 @@
 
   --border: 0 0% 87%; /* #DEDEDE light border */
   --input: 0 0% 87%;
-  --ring: 43 97% 48%; /* #F2B705 yellow */
+  --ring: 60 100% 50%; /* #FFFF00 yellow */
 
   --card: 0 0% 100%;
   --card-foreground: 0 0% 7%;
@@ -66,7 +67,7 @@
   --popover-foreground: 0 0% 7%;
   --popover-border: 0 0% 87%;
 
-  --primary: 43 97% 48%; /* #F2B705 yellow */
+  --primary: 60 100% 50%; /* #FFFF00 yellow */
   --primary-foreground: 0 0% 7%; /* dark text on yellow */
 
   --secondary: 0 0% 7%; /* #111111 charcoal */
@@ -75,13 +76,13 @@
   --muted: 0 0% 96%; /* #F5F5F5 */
   --muted-foreground: 0 0% 33%; /* #555555 */
 
-  --accent: 43 97% 48%; /* #F2B705 */
+  --accent: 60 100% 50%; /* #FFFF00 */
   --accent-foreground: 0 0% 7%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --app-font-sans: 'Inter', sans-serif;
+  --app-font-sans: 'Montserrat', sans-serif;
   --app-font-serif: Georgia, serif;
   --app-font-mono: Menlo, monospace;
   --radius: 10px;

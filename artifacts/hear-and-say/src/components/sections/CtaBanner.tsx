@@ -3,7 +3,7 @@ import { Phone, FileText, MapPin } from "lucide-react";
 
 export function CtaBanner() {
   return (
-    <section id="contact" className="bg-[#F2B705] py-16 md:py-24 relative overflow-hidden">
+    <section id="contact" className="bg-[#FFFF00] py-16 md:py-24 relative overflow-hidden">
       {/* Subtle dark decorative elements */}
       <div className="absolute right-0 top-0 w-[400px] h-[400px] bg-[#111111]/5 rounded-full blur-[80px] pointer-events-none -mr-48 -mt-48" />
       <div className="absolute left-0 bottom-0 w-[300px] h-[300px] bg-[#111111]/5 rounded-full blur-[60px] pointer-events-none -ml-32 -mb-32" />
