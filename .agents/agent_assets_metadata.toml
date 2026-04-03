@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "OmhAoAlVnig5GakgPFiP4"
+uri = "file://artifacts/hear-and-say/public/images/hero-toddler.png"
+type = "image"
+title = "Toddler with hearing device"
+
+[[generated]]
+id = "WYJQysbF8F0F_r8iYrfy0"
+uri = "file://artifacts/hear-and-say/public/images/service-audiology.png"
+type = "image"
+title = "Audiologist with patient"
+
+[[generated]]
+id = "DNns2f4mWHSMGunAaBg62"
+uri = "file://artifacts/hear-and-say/public/images/service-therapy.png"
+type = "image"
+title = "Speech therapy session"
+
+[[generated]]
+id = "38IAqZM6cfsapx37HoDrI"
+uri = "file://artifacts/hear-and-say/public/images/service-telehealth.png"
+type = "image"
+title = "Telehealth video call"
+
+[[generated]]
+id = "oei8ZKNFUWwRo6bNkr3SM"
+uri = "file://artifacts/hear-and-say/public/images/service-ndis.png"
+type = "image"
+title = "Family meeting NDIS"

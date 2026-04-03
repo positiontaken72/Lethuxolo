@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Hear and Say"
+version = "1.0.0"
+id = "artifacts/hear-and-say"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24241
+
+[services.development]
+run = "pnpm --filter @workspace/hear-and-say run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/hear-and-say", "run", "build" ]
+publicDir = "artifacts/hear-and-say/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24241"
+BASE_PATH = "/"

@@ -1,0 +1,142 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Gotham HTF",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#003976",
+    "secondary": "#007FB0",
+    "accent": "#007FB0",
+    "background": "#FFFFFF",
+    "textPrimary": "#607388",
+    "link": "#607388"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Gotham HTF",
+      "heading": "Gotham HTF"
+    },
+    "fontStacks": {
+      "heading": [
+        "Gotham HTF",
+        "sans-serif"
+      ],
+      "body": [
+        "Gotham HTF",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Gotham HTF",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "54px",
+      "h2": "37px",
+      "body": "14px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "4px"
+  },
+  "components": {
+    "input": {
+      "background": "#003976",
+      "textColor": "#FFFFFF",
+      "borderColor": "#F4F2F0",
+      "borderRadius": "10px",
+      "borderRadiusCorners": {
+        "topLeft": "10px",
+        "topRight": "10px",
+        "bottomRight": "10px",
+        "bottomLeft": "10px"
+      },
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#007FB0",
+      "textColor": "#FFFFFF",
+      "borderColor": "#007FB0",
+      "borderRadius": "10px",
+      "borderRadiusCorners": {
+        "topLeft": "10px",
+        "topRight": "10px",
+        "bottomRight": "10px",
+        "bottomLeft": "10px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#FFFFFF",
+      "textColor": "#003976",
+      "borderColor": "#CCD7E4",
+      "borderRadius": "10px",
+      "borderRadiusCorners": {
+        "topLeft": "10px",
+        "topRight": "10px",
+        "bottomRight": "10px",
+        "bottomLeft": "10px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "https://hearandsay.org.au/wp-content/uploads/Hear-and-Say-Logo.svg",
+    "favicon": "https://hearandsay.org.au/wp-content/uploads/Hear-and-Say-Favicon-150x150.png",
+    "ogImage": "https://hearandsay.org.au/wp-content/uploads/Hear-and-say.jpg",
+    "logoHref": "https://hearandsay.org.au"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 3,
+    "reasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and matches the brand name 'Hear and Say'.",
+    "confidence": 0.95,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 1,
+      "text": "Book an Appointment",
+      "reasoning": "Button #1 'Book an Appointment' is the primary CTA due to its vibrant blue background (#007FB0), which aligns with the brand color, and its action-oriented text."
+    },
+    "secondary": {
+      "index": 10,
+      "text": "Clinic locationsWe provide expert care close to home, with a dedicated network of centres convenient",
+      "reasoning": "Button #10 'Clinic locations' is selected as secondary due to its distinct white background (#FFFFFF) and informative text, providing a supportive action to the primary CTA."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "Individuals seeking audiology and speech pathology services"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and matches the brand name 'Hear and Say'.",
+        "confidence": 0.95
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
