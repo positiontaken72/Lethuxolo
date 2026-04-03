@@ -30,3 +30,45 @@ id = "oei8ZKNFUWwRo6bNkr3SM"
 uri = "file://artifacts/hear-and-say/public/images/service-ndis.png"
 type = "image"
 title = "Family meeting NDIS"
+
+[[generated]]
+id = "bthxNUuVUFDFevdpBBdxv"
+uri = "file://artifacts/hear-and-say/public/images/hero-mining.png"
+type = "image"
+title = "Active open-cast mine hero"
+
+[[generated]]
+id = "lwVF0iS4vh36TbtrA-imD"
+uri = "file://artifacts/hear-and-say/public/images/service-bulk-transport.png"
+type = "image"
+title = "Bulk transport haul trucks"
+
+[[generated]]
+id = "D0g-k8L-MMW1sQP59MuR5"
+uri = "file://artifacts/hear-and-say/public/images/service-yellow-plant.png"
+type = "image"
+title = "Yellow plant excavator bucket"
+
+[[generated]]
+id = "-G6eKnLLiI5bauiMeTuRT"
+uri = "file://artifacts/hear-and-say/public/images/service-road-maintenance.png"
+type = "image"
+title = "Road maintenance grader"
+
+[[generated]]
+id = "uwWkCR4J11X6mC2qbX2e5"
+uri = "file://artifacts/hear-and-say/public/images/service-industrial-cleaning.png"
+type = "image"
+title = "Industrial cleaning equipment"
+
+[[generated]]
+id = "6q7lz3x-ggsdv72TcXu5A"
+uri = "file://artifacts/hear-and-say/public/images/service-supply-goods.png"
+type = "image"
+title = "Supply goods warehouse"
+
+[[generated]]
+id = "sMxbv66ZfmpDou84NBTqH"
+uri = "file://artifacts/hear-and-say/public/images/service-lighting.png"
+type = "image"
+title = "Industrial lighting towers"

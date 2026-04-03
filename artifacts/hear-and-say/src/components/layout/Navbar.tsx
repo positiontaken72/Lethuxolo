@@ -1,5 +1,4 @@
-import { Link } from "wouter";
-import { Search, MapPin, Calendar, Phone, Heart, ChevronDown, Menu } from "lucide-react";
+import { Search, MapPin, Calendar, Phone, ChevronDown, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,29 +13,29 @@ export function Navbar() {
   return (
     <header className="w-full sticky top-0 z-50 bg-white border-b border-border shadow-sm">
       {/* Top Utility Bar */}
-      <div className="bg-gray-50 border-b border-border py-2 px-4 md:px-8 flex justify-between items-center text-xs text-muted-foreground">
-        <div className="flex items-center space-x-6 hidden md:flex">
-          <a href="#events" className="flex items-center hover:text-primary transition-colors">
+      <div className="bg-[#F5F5F5] border-b border-border py-2 px-4 md:px-8 flex justify-between items-center text-xs text-[#555555]">
+        <div className="items-center space-x-6 hidden md:flex">
+          <a href="#services" className="flex items-center hover:text-[#111111] transition-colors">
             <Calendar className="w-3 h-3 mr-2" />
-            Event Calendar
+            Our Services
           </a>
-          <a href="#locations" className="flex items-center hover:text-primary transition-colors">
+          <a href="#locations" className="flex items-center hover:text-[#111111] transition-colors">
             <MapPin className="w-3 h-3 mr-2" />
-            Our Locations
+            Mpumalanga, South Africa
           </a>
-          <a href="tel:0738502111" className="flex items-center hover:text-primary transition-colors">
+          <a href="tel:+27000000000" className="flex items-center hover:text-[#111111] transition-colors">
             <Phone className="w-3 h-3 mr-2" />
-            (07) 3850 2111
+            +27 (0) 000 000 000
           </a>
         </div>
         <div className="w-full md:w-auto flex items-center md:justify-end">
           <div className="relative w-full md:w-64">
-            <Input 
-              type="search" 
-              placeholder="Type to start searching" 
+            <Input
+              type="search"
+              placeholder="Type to start searching"
               className="h-8 pl-3 pr-8 text-xs bg-white"
             />
-            <Button variant="ghost" size="icon" className="absolute right-0 top-0 h-8 w-8 text-muted-foreground">
+            <Button variant="ghost" size="icon" className="absolute right-0 top-0 h-8 w-8 text-[#555555]">
               <Search className="h-4 w-4" />
             </Button>
           </div>
@@ -46,53 +45,48 @@ export function Navbar() {
       {/* Main Navigation */}
       <div className="px-4 md:px-8 py-4 flex justify-between items-center bg-white">
         <a href="/" className="flex-shrink-0">
-          <img 
-            src="https://hearandsay.org.au/wp-content/uploads/Hear-and-Say-Logo.svg" 
-            alt="Hear and Say Logo" 
-            className="h-12 md:h-16"
+          <img
+            src="/lethuxolo-logo.jpeg"
+            alt="Lethuxolo Trading Logo"
+            className="h-14 md:h-16 object-contain"
           />
         </a>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center space-x-1 xl:space-x-4">
-          <a href="#donate" className="flex items-center px-3 py-2 text-sm font-medium text-[#003976] hover:text-primary transition-colors">
-            <Heart className="w-4 h-4 mr-2 text-destructive" />
-            Donate
+          <a href="/" className="px-3 py-2 text-sm font-medium text-[#111111] hover:text-[#F2B705] transition-colors">
+            Home
           </a>
-          
+
+          <a href="#about" className="px-3 py-2 text-sm font-medium text-[#111111] hover:text-[#F2B705] transition-colors">
+            About
+          </a>
+
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center px-3 py-2 text-sm font-medium text-[#003976] hover:text-primary transition-colors outline-none">
-              Our Services <ChevronDown className="w-4 h-4 ml-1" />
+            <DropdownMenuTrigger className="flex items-center px-3 py-2 text-sm font-medium text-[#111111] hover:text-[#F2B705] transition-colors outline-none">
+              Services <ChevronDown className="w-4 h-4 ml-1" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-48">
-              <DropdownMenuItem><a href="#audiology" className="w-full">Audiology & Hearing Health</a></DropdownMenuItem>
-              <DropdownMenuItem><a href="#therapy" className="w-full">Therapy & Wellbeing</a></DropdownMenuItem>
-              <DropdownMenuItem><a href="#telehealth" className="w-full">Telehealth Services</a></DropdownMenuItem>
-              <DropdownMenuItem><a href="#ndis" className="w-full">NDIS & Financial Support</a></DropdownMenuItem>
+            <DropdownMenuContent align="start" className="w-52">
+              <DropdownMenuItem><a href="#bulk-transport" className="w-full">Bulk Transportation</a></DropdownMenuItem>
+              <DropdownMenuItem><a href="#yellow-plant" className="w-full">Yellow Plant Machinery</a></DropdownMenuItem>
+              <DropdownMenuItem><a href="#road-maintenance" className="w-full">Road Maintenance</a></DropdownMenuItem>
+              <DropdownMenuItem><a href="#industrial-cleaning" className="w-full">Industrial Cleaning</a></DropdownMenuItem>
+              <DropdownMenuItem><a href="#supply-goods" className="w-full">Supply of Goods</a></DropdownMenuItem>
+              <DropdownMenuItem><a href="#lighting" className="w-full">Lighting Solutions</a></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center px-3 py-2 text-sm font-medium text-[#003976] hover:text-primary transition-colors outline-none">
-              About Us <ChevronDown className="w-4 h-4 ml-1" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-48">
-              <DropdownMenuItem><a href="#mission" className="w-full">Our Story & Mission</a></DropdownMenuItem>
-              <DropdownMenuItem><a href="#team" className="w-full">Our People</a></DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <a href="#resources" className="px-3 py-2 text-sm font-medium text-[#003976] hover:text-primary transition-colors">
-            Resources & Learning
+          <a href="#leadership" className="px-3 py-2 text-sm font-medium text-[#111111] hover:text-[#F2B705] transition-colors">
+            Leadership
           </a>
-          
-          <a href="#contact" className="px-3 py-2 text-sm font-medium text-[#003976] hover:text-primary transition-colors">
-            Contact Us
+
+          <a href="#contact" className="px-3 py-2 text-sm font-medium text-[#111111] hover:text-[#F2B705] transition-colors">
+            Contact
           </a>
 
           <div className="pl-4 border-l border-border">
-            <Button className="bg-[#007FB0] hover:bg-[#006a94] text-white rounded-[10px] font-medium px-6 shadow-none">
-              Book An Appointment
+            <Button className="bg-[#F2B705] hover:bg-[#d9a304] text-[#111111] rounded-[10px] font-bold px-6 shadow-none">
+              Get Quote
             </Button>
           </div>
         </nav>
@@ -101,23 +95,20 @@ export function Navbar() {
         <div className="lg:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-[#003976]">
+              <Button variant="ghost" size="icon" className="text-[#111111]">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col gap-6 pt-12">
               <nav className="flex flex-col space-y-4">
-                <a href="#donate" className="flex items-center text-lg font-medium text-[#003976]">
-                  <Heart className="w-5 h-5 mr-3 text-destructive" />
-                  Donate
-                </a>
-                <a href="#services" className="text-lg font-medium text-[#003976]">Our Services</a>
-                <a href="#about" className="text-lg font-medium text-[#003976]">About Us</a>
-                <a href="#resources" className="text-lg font-medium text-[#003976]">Resources & Learning</a>
-                <a href="#contact" className="text-lg font-medium text-[#003976]">Contact Us</a>
+                <a href="/" className="text-lg font-medium text-[#111111]">Home</a>
+                <a href="#about" className="text-lg font-medium text-[#111111]">About</a>
+                <a href="#services" className="text-lg font-medium text-[#111111]">Services</a>
+                <a href="#leadership" className="text-lg font-medium text-[#111111]">Leadership</a>
+                <a href="#contact" className="text-lg font-medium text-[#111111]">Contact</a>
                 <div className="pt-6 border-t border-border">
-                  <Button className="w-full bg-[#007FB0] hover:bg-[#006a94] text-white rounded-[10px] font-medium shadow-none py-6 text-lg">
-                    Book An Appointment
+                  <Button className="w-full bg-[#F2B705] hover:bg-[#d9a304] text-[#111111] rounded-[10px] font-bold shadow-none py-6 text-lg">
+                    Get Quote
                   </Button>
                 </div>
               </nav>

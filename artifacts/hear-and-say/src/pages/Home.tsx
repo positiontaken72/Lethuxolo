@@ -5,7 +5,6 @@ import { Services } from "@/components/sections/Services";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Locations } from "@/components/sections/Locations";
 import { CtaBanner } from "@/components/sections/CtaBanner";
-import { Testimonials } from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
         <Services />
         <WhyChooseUs />
         <Locations />
-        <Testimonials />
         <CtaBanner />
       </main>
       <Footer />

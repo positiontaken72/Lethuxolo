@@ -1,0 +1,252 @@
+🧠 1. WEBSITE OBJECTIVE (VERY IMPORTANT)
+
+The website must:
+
+Establish authority in mining & logistics
+Compensate for lack of project portfolio
+Position the company as boardroom-ready
+Convert visitors into:
+Clients
+Partners
+Contractors
+
+👉 This is not a “website”
+👉 This is a digital company CV + sales machine
+
+🎯 2. DESIGN PHILOSOPHY (FINAL)
+Style Direction:
+Arcadis (PRIMARY influence)
+Reservato (structure & spacing)
+Mining industry (imagery & tone)
+Visual Identity:
+Colors:
+White: #FFFFFF (primary background)
+Charcoal: #111111 (text / dark sections)
+Grey: #F5F5F5 (section breaks)
+Accent Yellow: #F2B705 (buttons only)
+Typography:
+Clean geometric sans-serif
+Large headings (bold, confident)
+Generous spacing
+Design Rules:
+❌ No heavy gradients
+❌ No glow effects
+❌ No clutter
+✅ Clean grid (12-column)
+✅ Large whitespace
+✅ Sharp hierarchy
+🧭 3. WEBSITE STRUCTURE (ALL PAGES)
+🏠 PAGE 1: HOME (MAIN CONVERSION PAGE)
+🔷 SECTION 1: NAVBAR (Sticky)
+
+Left:
+
+Logo (horizontal version)
+
+Center:
+
+Home
+About
+Services
+Leadership
+Contact
+
+Right:
+🟡 Get Quote (primary CTA)
+
+🔶 SECTION 2: HERO (FIRST IMPRESSION)
+Layout:
+Left → Text
+Right → Full-height mining image
+Content:
+
+Headline:
+
+Mining & Industrial Support Services
+
+Sub-headline:
+
+Built for demanding environments. Focused on reliability, safety, and operational excellence.
+
+Buttons:
+
+🟡 Get Quote
+⚪ Download Company Profile
+Design Notes:
+White background blending into image
+Strong contrast
+No clutter
+⚙️ SECTION 3: SERVICES (FIRST — per your instruction)
+Layout:
+Left → Text list
+Right → Large image (aligned properly, no distortion)
+Content:
+
+Title:
+
+Our Services
+
+Intro:
+
+Delivering tailored solutions for mining and industrial operations.
+
+Services List:
+Bulk Transportation
+Yellow Plant Machinery
+Road Maintenance
+Industrial Cleaning
+Supply of Goods
+Lighting Solutions
+
+Each:
+
+Short description
+“Learn More →”
+UX:
+Clean lines
+Divider spacing
+Minimal cards
+🧩 SECTION 4: WHY CHOOSE US (AFTER SERVICES ✅)
+Layout:
+Grid (2 rows, 3 columns)
+Content Blocks:
+
+Reliability
+Consistent performance in demanding environments.
+
+Safety First
+Strict adherence to safety and compliance standards.
+
+Industry Aligned
+Tailored solutions for mining and heavy industries.
+
+Scalable Solutions
+Flexible support for projects of all sizes.
+
+Operational Efficiency
+Optimized processes for cost and time effectiveness.
+
+Community Driven
+Supporting local growth and empowerment.
+
+Design:
+White cards
+Thin borders
+Soft shadows
+Clean icons
+📥 SECTION 5: COMPANY PROFILE DOWNLOAD
+Layout:
+
+Centered
+
+Heading:
+
+Company Profile
+
+Text:
+
+Learn more about our capabilities, services, and operational approach.
+
+Button:
+🟡 Download Company Profile (PDF)
+
+Design:
+White background
+Minimal
+High focus
+👤 SECTION 6: LEADERSHIP (NO IMAGE — CLEAN)
+Content:
+
+Title:
+
+Leadership
+
+Subheading:
+
+Expertise Behind Every Operation
+
+Text (Professional Rewrite):
+
+Mesuli Mnguni brings over a decade of experience in the logistics and mining sector, with exposure dating back to 2013. His expertise spans both operational execution and administrative management, providing a comprehensive understanding of industry demands.
+
+He has overseen operations responsible for handling more than 4 million tons of coal, demonstrating strong leadership in high-volume, high-pressure environments. His approach is rooted in efficiency, safety, and delivering consistent results.
+
+Design:
+Centered text block
+Thin yellow accent line
+No image (premium feel)
+📞 SECTION 7: CONTACT + CTA
+Left:
+Phone
+Email
+Address
+Right:
+
+Form:
+
+Name
+Company
+Service
+Message
+
+Button:
+🟡 Submit Request
+
+🔻 FOOTER
+Logo
+Navigation
+Contact
+Copyright
+📄 PAGE 2: ABOUT PAGE
+Sections:
+Introduction
+Company Values
+Mission
+Vision
+Tone:
+
+Corporate, structured, authoritative
+
+⚙️ PAGE 3: SERVICES PAGE
+
+Each service gets:
+
+Title
+Description
+Supporting image
+CTA
+👤 PAGE 4: LEADERSHIP PAGE
+
+Full detailed profile of Mesuli
+
+📞 PAGE 5: CONTACT PAGE
+Form
+Map (optional)
+Contact details
+🧠 4. STORYTELLING FLOW (CRITICAL)
+
+The site flows like this:
+
+Hook (Hero)
+Capability (Services)
+Trust (Why Choose Us)
+Depth (Profile Download)
+Authority (Leadership)
+Action (Contact)
+
+👉 This is intentional psychological flow.
+
+🎯 5. CONVERSION ELEMENTS
+Sticky “Get Quote”
+Profile Download
+Clean CTAs
+Simple forms
+🧠 6. ADVANCED DESIGN ELEMENTS
+Subtle coal aesthetic:
+Background textures (VERY light)
+Dark section separators
+Industrial imagery
+Micro-interactions:
+Hover states
+Smooth transitions
+Button feedback

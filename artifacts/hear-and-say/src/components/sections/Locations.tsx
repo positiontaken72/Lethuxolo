@@ -1,56 +1,61 @@
-import { MapPin, MonitorPlay, ArrowRight } from "lucide-react";
+import { MapPin, HardHat, ArrowRight } from "lucide-react";
 
 export function Locations() {
   return (
-    <section className="py-20 md:py-28 bg-gray-50 border-y border-border">
+    <section id="locations" className="py-20 md:py-28 bg-[#F5F5F5] border-y border-border">
       <div className="container mx-auto px-4 md:px-8">
-        
+
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#003976] mb-4 text-center md:text-left">
-            Where you can find us
+          <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4 text-center md:text-left">
+            Where We Operate
           </h2>
+          <p className="text-[#555555] text-lg max-w-2xl">
+            Based in Mpumalanga — South Africa's key mining heartland — Lethuxolo Trading delivers operational support across the region and beyond.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          
-          {/* Card 1: Clinic Locations */}
-          <a 
-            href="#locations" 
-            className="group bg-white rounded-[24px] p-8 md:p-10 border border-border shadow-sm hover:shadow-lg hover:border-[#007FB0]/30 transition-all duration-300 flex flex-col h-full"
+
+          {/* Card 1: Regional Base */}
+          <a
+            href="#contact"
+            className="group bg-white rounded-[24px] p-8 md:p-10 border border-border shadow-sm hover:shadow-lg hover:border-[#F2B705]/40 transition-all duration-300 flex flex-col h-full"
+            data-testid="card-regional-base"
           >
-            <div className="w-16 h-16 bg-[#007FB0]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#007FB0]/20 transition-colors">
-              <MapPin className="w-8 h-8 text-[#007FB0]" />
+            <div className="w-16 h-16 bg-[#F2B705]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#F2B705]/20 transition-colors">
+              <MapPin className="w-8 h-8 text-[#F2B705]" />
             </div>
-            
-            <h3 className="text-2xl font-bold text-[#003976] mb-4">Clinic locations</h3>
-            
-            <p className="text-muted-foreground mb-8 flex-grow text-lg">
-              We provide expert care close to home, with a dedicated network of centres conveniently located across Queensland to support you and your family.
+
+            <h3 className="text-2xl font-bold text-[#111111] mb-4">Mpumalanga Base</h3>
+
+            <p className="text-[#555555] mb-8 flex-grow text-lg">
+              Strategically headquartered in Mpumalanga, we are positioned at the core of South Africa's coal and mining operations, enabling rapid deployment across the region.
             </p>
-            
-            <div className="inline-flex items-center text-[#007FB0] font-bold text-lg group-hover:translate-x-2 transition-transform">
-              Find Your Nearest Centre
+
+            <div className="inline-flex items-center text-[#111111] font-bold text-lg group-hover:translate-x-2 transition-transform">
+              Get In Touch
               <ArrowRight className="ml-2 w-5 h-5" />
             </div>
           </a>
 
-          {/* Card 2: Telehealth */}
-          <a 
-            href="#telehealth" 
-            className="group bg-[#003976] rounded-[24px] p-8 md:p-10 shadow-sm hover:shadow-lg hover:shadow-[#003976]/20 transition-all duration-300 flex flex-col h-full text-white"
+          {/* Card 2: On-site Operations */}
+          <a
+            href="#services"
+            className="group bg-[#111111] rounded-[24px] p-8 md:p-10 shadow-sm hover:shadow-lg hover:shadow-black/20 transition-all duration-300 flex flex-col h-full text-white"
+            data-testid="card-onsite-operations"
           >
-            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-white/20 transition-colors">
-              <MonitorPlay className="w-8 h-8 text-white" />
+            <div className="w-16 h-16 bg-[#F2B705]/20 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#F2B705]/30 transition-colors">
+              <HardHat className="w-8 h-8 text-[#F2B705]" />
             </div>
-            
-            <h3 className="text-2xl font-bold text-white mb-4">Telehealth</h3>
-            
-            <p className="text-white/80 mb-8 flex-grow text-lg">
-              Access our specialist therapy from anywhere. We use secure video conferencing to bring expert care directly to you at home, school, or childcare.
+
+            <h3 className="text-2xl font-bold text-white mb-4">On-Site Deployment</h3>
+
+            <p className="text-white/70 mb-8 flex-grow text-lg">
+              Our teams integrate directly into your operations. From coal mines to industrial facilities, we mobilize quickly and maintain high performance standards throughout.
             </p>
-            
-            <div className="inline-flex items-center text-white font-bold text-lg group-hover:translate-x-2 transition-transform">
-              Connect Online
+
+            <div className="inline-flex items-center text-[#F2B705] font-bold text-lg group-hover:translate-x-2 transition-transform">
+              View Our Services
               <ArrowRight className="ml-2 w-5 h-5" />
             </div>
           </a>
