@@ -7,11 +7,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Col */}
           <div className="flex flex-col space-y-6">
-            <img
-              src="/lethuxolo-logo.jpeg"
-              alt="Lethuxolo Trading Logo"
-              className="h-16 object-contain self-start rounded-lg"
-            />
+            <div className="flex items-center gap-3">
+              <img
+                src="/lethuxolo-logo.png"
+                alt="Lethuxolo Trading Logo"
+                className="h-14 w-14 object-contain rounded-full"
+              />
+              <span className="text-white font-bold text-lg leading-tight tracking-tight">
+                Lethuxolo<br />Trading
+              </span>
+            </div>
             <p className="text-sm text-white/60">
               Inspired by the Impossible. Delivering reliable mining and industrial support services across South Africa.
             </p>

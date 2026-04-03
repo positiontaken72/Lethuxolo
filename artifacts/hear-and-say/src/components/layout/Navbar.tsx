@@ -44,12 +44,15 @@ export function Navbar() {
 
       {/* Main Navigation */}
       <div className="px-4 md:px-8 py-4 flex justify-between items-center bg-white">
-        <a href="/" className="flex-shrink-0">
+        <a href="/" className="flex-shrink-0 flex items-center gap-3">
           <img
-            src="/lethuxolo-logo.jpeg"
+            src="/lethuxolo-logo.png"
             alt="Lethuxolo Trading Logo"
-            className="h-14 md:h-16 object-contain"
+            className="h-12 md:h-14 w-12 md:w-14 object-contain rounded-full"
           />
+          <span className="text-[#111111] font-bold text-lg md:text-xl leading-tight tracking-tight hidden sm:block">
+            Lethuxolo<br />Trading
+          </span>
         </a>
 
         {/* Desktop Nav */}
