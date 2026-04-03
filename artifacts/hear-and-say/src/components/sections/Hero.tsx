@@ -25,7 +25,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
               <Button
                 size="lg"
-                className="bg-[#FFFF00] hover:bg-[#cccc00] text-[#111111] rounded-[10px] px-8 h-14 text-base font-bold shadow-none w-full sm:w-auto"
+                className="bg-[#ffd200] hover:bg-[#b39400] text-[#111111] rounded-[10px] px-8 h-14 text-base font-bold shadow-none w-full sm:w-auto"
                 data-testid="button-get-quote"
               >
                 Get Quote
@@ -33,7 +33,7 @@ export function Hero() {
 
               <a
                 href="#profile"
-                className="inline-flex items-center text-[#111111] font-semibold hover:text-[#FFFF00] transition-colors text-base group"
+                className="inline-flex items-center text-[#111111] font-semibold hover:text-[#ffd200] transition-colors text-base group"
                 data-testid="link-download-profile"
               >
                 <Download className="mr-2 w-5 h-5" />
@@ -57,7 +57,7 @@ export function Hero() {
 
             {/* Floating badge */}
             <div
-              className="absolute -bottom-6 -left-6 md:bottom-8 md:-left-12 bg-[#FFFF00] rounded-xl shadow-lg p-4 flex items-center gap-4"
+              className="absolute -bottom-6 -left-6 md:bottom-8 md:-left-12 bg-[#ffd200] rounded-xl shadow-lg p-4 flex items-center gap-4"
               style={{ animationDuration: "3s" }}
             >
               <div className="flex flex-col">

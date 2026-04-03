@@ -53,12 +53,12 @@ export function WhyChooseUs() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-[20px] p-8 border border-border/70 shadow-sm hover:shadow-md hover:border-[#FFFF00]/40 transition-all duration-300 group animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
+                className="bg-white rounded-[20px] p-8 border border-border/70 shadow-sm hover:shadow-md hover:border-[#ffd200]/40 transition-all duration-300 group animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
                 style={{ animationDelay: `${index * 100}ms`, animationDuration: "700ms" }}
                 data-testid={`card-reason-${index}`}
               >
-                <div className="w-14 h-14 bg-[#FFFF00]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#FFFF00]/20 transition-colors">
-                  <Icon className="w-7 h-7 text-[#FFFF00]" strokeWidth={2} />
+                <div className="w-14 h-14 bg-[#ffd200]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#ffd200]/20 transition-colors">
+                  <Icon className="w-7 h-7 text-[#ffd200]" strokeWidth={2} />
                 </div>
                 <h3 className="text-xl font-bold text-[#111111] mb-3">
                   {reason.title}

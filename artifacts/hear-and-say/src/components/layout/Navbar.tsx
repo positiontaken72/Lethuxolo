@@ -26,16 +26,16 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center space-x-1 xl:space-x-4">
-          <a href="/" className="px-3 py-2 text-sm font-bold text-[#111111] hover:text-[#FFFF00] transition-colors">
+          <a href="/" className="px-3 py-2 text-sm font-bold text-[#111111] hover:text-[#ffd200] transition-colors">
             Home
           </a>
 
-          <a href="#about" className="px-3 py-2 text-sm font-bold text-[#111111] hover:text-[#FFFF00] transition-colors">
+          <a href="#about" className="px-3 py-2 text-sm font-bold text-[#111111] hover:text-[#ffd200] transition-colors">
             About
           </a>
 
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center px-3 py-2 text-sm font-bold text-[#111111] hover:text-[#FFFF00] transition-colors outline-none">
+            <DropdownMenuTrigger className="flex items-center px-3 py-2 text-sm font-bold text-[#111111] hover:text-[#ffd200] transition-colors outline-none">
               Services <ChevronDown className="w-4 h-4 ml-1" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-52">
@@ -48,16 +48,16 @@ export function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <a href="#leadership" className="px-3 py-2 text-sm font-bold text-[#111111] hover:text-[#FFFF00] transition-colors">
+          <a href="#leadership" className="px-3 py-2 text-sm font-bold text-[#111111] hover:text-[#ffd200] transition-colors">
             Leadership
           </a>
 
-          <a href="#contact" className="px-3 py-2 text-sm font-bold text-[#111111] hover:text-[#FFFF00] transition-colors">
+          <a href="#contact" className="px-3 py-2 text-sm font-bold text-[#111111] hover:text-[#ffd200] transition-colors">
             Contact
           </a>
 
           <div className="pl-4 border-l border-border">
-            <Button className="bg-[#FFFF00] hover:bg-[#cccc00] text-[#111111] rounded-[10px] font-bold px-6 shadow-none border-0">
+            <Button className="bg-[#ffd200] hover:bg-[#b39400] text-[#111111] rounded-[10px] font-bold px-6 shadow-none border-0">
               Get Quote
             </Button>
           </div>
@@ -79,7 +79,7 @@ export function Navbar() {
                 <a href="#leadership" className="text-lg font-bold text-[#111111]">Leadership</a>
                 <a href="#contact" className="text-lg font-bold text-[#111111]">Contact</a>
                 <div className="pt-6 border-t border-border">
-                  <Button className="w-full bg-[#FFFF00] hover:bg-[#cccc00] text-[#111111] rounded-[10px] font-bold shadow-none py-6 text-lg border-0">
+                  <Button className="w-full bg-[#ffd200] hover:bg-[#b39400] text-[#111111] rounded-[10px] font-bold shadow-none py-6 text-lg border-0">
                     Get Quote
                   </Button>
                 </div>
