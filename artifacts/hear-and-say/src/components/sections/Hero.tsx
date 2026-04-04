@@ -3,13 +3,9 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-16 md:py-24 lg:py-32">
-      {/* Decorative background circles */}
-      <div className="absolute top-0 right-0 -mr-64 -mt-64 w-[800px] h-[800px] rounded-full border-[40px] border-gray-50/50 pointer-events-none z-0" />
-      <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-[500px] h-[500px] rounded-full border-[20px] border-gray-50/50 pointer-events-none z-0" />
-
+    <section className="relative w-full overflow-hidden bg-white pt-16 pb-8 md:pt-20 md:pb-12 lg:pt-24 lg:pb-0">
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 items-end">
 
           {/* Text Content */}
           <div className="flex flex-col space-y-8 max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
@@ -43,26 +39,29 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Image */}
-          <div className="relative animate-in fade-in slide-in-from-right-8 duration-1000 delay-200">
-            <div className="relative rounded-[24px] overflow-hidden shadow-xl aspect-[4/3] md:aspect-[16/10] lg:aspect-square xl:aspect-[4/3]">
-              <img
-                src="/images/hero-mining.png"
-                alt="Heavy mining and industrial operations"
-                className="w-full h-full object-cover"
-              />
-              {/* Dark overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-            </div>
+          {/* Image — portrait orientation */}
+          <div className="relative animate-in fade-in slide-in-from-right-8 duration-1000 delay-200 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[380px] lg:max-w-none lg:w-[88%] xl:w-[80%]">
+              {/* Portrait frame */}
+              <div className="relative rounded-[6px] overflow-hidden shadow-2xl aspect-[3/4]">
+                <img
+                  src="/images/hero-mining.png"
+                  alt="Heavy mining and industrial operations"
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
-            {/* Floating badge */}
-            <div
-              className="absolute -bottom-6 -left-6 md:bottom-8 md:-left-12 bg-[#ffd200] rounded-xl shadow-lg p-4 flex items-center gap-4"
-              style={{ animationDuration: "3s" }}
-            >
-              <div className="flex flex-col">
-                <span className="font-bold text-[#111111] text-lg">4M+ Tons</span>
-                <span className="text-xs text-[#111111]/70 font-medium">Coal Handled</span>
+                {/* Bottom text overlay inside image */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-white/50 text-[10px] tracking-[0.3em] uppercase font-semibold mb-1">Mpumalanga, South Africa</p>
+                  <p className="text-white font-bold text-base leading-snug">Active mining & industrial operations</p>
+                </div>
+              </div>
+
+              {/* Floating badge — anchored to top-right of portrait */}
+              <div className="absolute -top-4 -right-4 md:-right-8 bg-[#ffd200] rounded-[4px] shadow-lg px-4 py-3">
+                <span className="font-bold text-[#111111] text-xl leading-none block">4M+</span>
+                <span className="text-[10px] text-[#111111]/70 font-semibold tracking-wide uppercase leading-none">Tons Handled</span>
               </div>
             </div>
           </div>
