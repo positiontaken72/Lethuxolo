@@ -1,74 +1,76 @@
-import { Button } from "@/components/ui/button";
-import { Phone, FileText, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function CtaBanner() {
   return (
-    <section id="contact" className="bg-[#ffd200] py-16 md:py-24 relative overflow-hidden">
-      {/* Subtle dark decorative elements */}
-      <div className="absolute right-0 top-0 w-[400px] h-[400px] bg-[#111111]/5 rounded-full blur-[80px] pointer-events-none -mr-48 -mt-48" />
-      <div className="absolute left-0 bottom-0 w-[300px] h-[300px] bg-[#111111]/5 rounded-full blur-[60px] pointer-events-none -ml-32 -mb-32" />
-      {/* Industrial grid texture overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 40px, #000 40px, #000 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, #000 40px, #000 41px)`
-        }}
-      />
+    <section id="contact" className="bg-[#111111] overflow-hidden">
+      <div className="container mx-auto px-6 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[420px]">
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
-
-          <div className="max-w-2xl text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111111] leading-tight mb-4">
-              Ready to partner with a reliable industrial services provider?
-            </h2>
-            <p className="text-[#111111]/70 text-lg md:text-xl font-medium">
-              Whether you need bulk transport, plant machinery, or site support — Lethuxolo Trading delivers. Reach out and let's discuss your operational requirements.
+          {/* Left: text */}
+          <div className="py-20 md:py-28 pr-0 lg:pr-16 flex flex-col justify-center">
+            <p className="text-[9px] tracking-[0.45em] uppercase font-bold text-[#ffd200] mb-6">
+              Work With Us
             </p>
+            <h2
+              className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
+              style={{ fontFamily: "var(--app-font-heading)" }}
+            >
+              Ready to get<br />started?
+            </h2>
+            <p className="text-white/50 text-[15px] leading-relaxed mb-10 max-w-sm">
+              Whether you need operational support, a reliable logistics partner,
+              or industrial services — we mobilize fast and deliver to spec.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="mailto:info@lethuxolotrading.co.za"
+                className="inline-flex items-center gap-2 bg-[#ffd200] text-[#111111] px-7 py-3.5 text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-white transition-colors"
+              >
+                Get a Quote
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 border border-white/20 text-white px-7 py-3.5 text-[11px] font-bold tracking-[0.18em] uppercase hover:border-[#ffd200] hover:text-[#ffd200] transition-colors"
+              >
+                Download Profile
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto shrink-0">
-            <Button
-              size="lg"
-              className="bg-[#111111] hover:bg-[#222222] text-white rounded-[10px] h-14 px-8 text-base font-bold shadow-none w-full sm:w-auto"
-              data-testid="button-get-quote"
-            >
-              Get Quote
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-white/50 hover:bg-white border-[#111111]/20 hover:border-[#111111] text-[#111111] rounded-[10px] h-14 px-8 text-base font-bold shadow-none w-full sm:w-auto transition-all"
-              data-testid="button-download-profile"
-            >
-              <FileText className="w-5 h-5 mr-2" />
-              Download Company Profile
-            </Button>
+          {/* Right: image panel */}
+          <div className="hidden lg:block relative overflow-hidden">
+            <img
+              src="/images/service-yellow-plant.png"
+              alt="Lethuxolo operations"
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
+            />
+            {/* Stats overlay on image */}
+            <div className="absolute inset-0 flex flex-col justify-end p-12">
+              <div className="grid grid-cols-2 gap-8">
+                {[
+                  { value: "4M+", label: "Tons Handled" },
+                  { value: "6", label: "Core Services" },
+                  { value: "100%", label: "Client Focused" },
+                  { value: "2022", label: "Established" },
+                ].map((stat, i) => (
+                  <div key={i}>
+                    <p
+                      className="text-[#ffd200] text-3xl font-bold leading-none"
+                      style={{ fontFamily: "var(--app-font-heading)" }}
+                    >
+                      {stat.value}
+                    </p>
+                    <p className="text-white/40 text-[9px] tracking-[0.25em] uppercase mt-1 font-semibold">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-        </div>
-
-        {/* Contact details row */}
-        <div className="mt-12 pt-8 border-t border-[#111111]/20 flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
-          <a
-            href="tel:+27000000000"
-            className="inline-flex items-center gap-2 text-[#111111] font-semibold hover:underline"
-            data-testid="link-phone"
-          >
-            <Phone className="w-4 h-4" />
-            +27 (0) 000 000 000
-          </a>
-          <a
-            href="mailto:info@lethuxolotrading.co.za"
-            className="inline-flex items-center gap-2 text-[#111111] font-semibold hover:underline"
-            data-testid="link-email"
-          >
-            info@lethuxolotrading.co.za
-          </a>
-          <span className="inline-flex items-center gap-2 text-[#111111] font-semibold">
-            <MapPin className="w-4 h-4" />
-            Mpumalanga, South Africa
-          </span>
         </div>
       </div>
     </section>

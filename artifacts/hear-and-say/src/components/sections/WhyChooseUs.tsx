@@ -1,74 +1,99 @@
-import { Shield, Truck, Zap, BarChart3, Users, TreePine } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-const reasons = [
+const capabilities = [
   {
-    icon: Shield,
     title: "Safety First",
-    description: "Strict adherence to safety and compliance standards in every operation, protecting personnel and assets."
+    description:
+      "Strict adherence to safety and compliance standards in every operation. Personnel and assets protected at every stage.",
+    href: "#about",
   },
   {
-    icon: Truck,
     title: "Reliability",
-    description: "Consistent performance in demanding environments. Clients depend on us for uninterrupted service delivery."
+    description:
+      "Consistent performance in demanding environments. Clients depend on us for uninterrupted, on-schedule service delivery.",
+    href: "#about",
   },
   {
-    icon: BarChart3,
     title: "Industry Aligned",
-    description: "Tailored solutions built specifically for mining and heavy industries — not adapted from elsewhere."
+    description:
+      "Built specifically for mining and heavy industry — not adapted from general-purpose service providers.",
+    href: "#services",
   },
   {
-    icon: Zap,
-    title: "Scalable Solutions",
-    description: "Flexible operational support for projects of all sizes, from single-site to multi-operation engagements."
+    title: "Scalable Operations",
+    description:
+      "Flexible support for projects of all sizes. From single-site mobilization to multi-operation engagements.",
+    href: "#services",
   },
   {
-    icon: Users,
     title: "Operational Efficiency",
-    description: "Optimized processes and streamlined execution for cost and time effectiveness on every project."
+    description:
+      "Optimized processes and streamlined execution — delivering cost and time effectiveness on every project.",
+    href: "#services",
   },
   {
-    icon: TreePine,
     title: "Community Driven",
-    description: "Supporting local economic growth and empowerment across Mpumalanga and surrounding regions."
-  }
+    description:
+      "Supporting local economic growth across Mpumalanga and surrounding regions through skills and opportunity.",
+    href: "#about",
+  },
 ];
 
 export function WhyChooseUs() {
   return (
-    <section id="about" className="py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="about" className="bg-[#F5F5F5] py-20 md:py-28">
+      <div className="container mx-auto px-6 md:px-8">
 
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#111111]">
-            Why Choose Us
-          </h2>
-          <p className="text-lg text-[#555555]">
-            Strategically positioned to deliver value through industry-relevant services, strong leadership experience, and a commitment to quality and safety.
+        {/* Header row */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 pb-10 border-b border-[#111111]/10">
+          <div>
+            <p className="text-[9px] tracking-[0.45em] uppercase font-bold text-[#ffd200] mb-5">
+              Our Capabilities
+            </p>
+            <h2
+              className="text-4xl md:text-5xl font-bold text-[#111111] leading-tight"
+              style={{ fontFamily: "var(--app-font-heading)" }}
+            >
+              Why Lethuxolo<br />Trading.
+            </h2>
+          </div>
+          <p className="text-[#666666] text-sm leading-relaxed max-w-xs md:text-right">
+            Strategically positioned to deliver value through industry-relevant
+            services, strong leadership, and operational discipline.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {reasons.map((reason, index) => {
-            const Icon = reason.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white rounded-[20px] p-8 border border-border/70 shadow-sm hover:shadow-md hover:border-[#ffd200]/40 transition-all duration-300 group animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
-                style={{ animationDelay: `${index * 100}ms`, animationDuration: "700ms" }}
-                data-testid={`card-reason-${index}`}
+        {/* Arcadis-style grid: NO icon boxes, thin top accent line, border dividers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {capabilities.map((cap, i) => (
+            <div
+              key={i}
+              className="border-b border-[#111111]/10 py-10 pr-0 md:pr-12 group"
+              style={{
+                borderRight: (i + 1) % 3 !== 0 ? "1px solid rgba(17,17,17,0.1)" : "none",
+              }}
+            >
+              {/* Yellow rule — Arcadis signature */}
+              <div className="w-8 h-[3px] bg-[#ffd200] mb-6" />
+
+              <h3
+                className="text-[1.1rem] font-bold text-[#111111] mb-3 leading-snug"
+                style={{ fontFamily: "var(--app-font-heading)" }}
               >
-                <div className="w-14 h-14 bg-[#ffd200]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#ffd200]/20 transition-colors">
-                  <Icon className="w-7 h-7 text-[#ffd200]" strokeWidth={2} />
-                </div>
-                <h3 className="text-xl font-bold text-[#111111] mb-3">
-                  {reason.title}
-                </h3>
-                <p className="text-[#555555] text-sm leading-relaxed">
-                  {reason.description}
-                </p>
-              </div>
-            );
-          })}
+                {cap.title}
+              </h3>
+              <p className="text-[#666666] text-[13.5px] leading-relaxed mb-7">
+                {cap.description}
+              </p>
+              <a
+                href={cap.href}
+                className="inline-flex items-center gap-1.5 text-[#111111] text-[10px] font-bold tracking-[0.16em] uppercase hover:text-[#ffd200] transition-colors group/link"
+              >
+                Learn more
+                <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          ))}
         </div>
 
       </div>

@@ -1,95 +1,161 @@
-import { ArrowRight, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
+
+const slides = [
+  {
+    image: "/images/hero-open-pit.jpeg",
+    label: "LETHUXOLO TRADING",
+    title: "Mining & Industrial\nSupport Services.",
+    cta: "Explore our services",
+    href: "#services",
+  },
+  {
+    image: "/images/service-bulk-transport.png",
+    label: "LOGISTICS",
+    title: "Bulk Transportation\nAcross South Africa.",
+    cta: "Bulk transportation",
+    href: "#bulk-transport",
+  },
+  {
+    image: "/images/service-yellow-plant.png",
+    label: "EQUIPMENT",
+    title: "Yellow Plant\nMachinery Operations.",
+    cta: "Plant machinery",
+    href: "#yellow-plant",
+  },
+  {
+    image: "/images/service-road-maintenance.png",
+    label: "INFRASTRUCTURE",
+    title: "Road Maintenance\n& Rehabilitation.",
+    cta: "Road maintenance",
+    href: "#road-maintenance",
+  },
+  {
+    image: "/images/service-industrial-cleaning.png",
+    label: "OPERATIONS",
+    title: "Industrial Cleaning\nAt Scale.",
+    cta: "Industrial cleaning",
+    href: "#industrial-cleaning",
+  },
+];
 
 export function Hero() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const t = setInterval(
+      () => setActive((i) => (i + 1) % slides.length),
+      6000
+    );
+    return () => clearInterval(t);
+  }, [paused]);
+
+  const prev = () => setActive((i) => (i - 1 + slides.length) % slides.length);
+  const next = () => setActive((i) => (i + 1) % slides.length);
+
   return (
     <section
-      className="relative w-full min-h-screen flex items-end overflow-hidden"
-      style={{
-        backgroundImage: "url('/images/hero-open-pit.jpeg')",
-        backgroundSize: "cover",
-        backgroundPosition: "60% center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="relative w-full overflow-hidden bg-[#111111]"
+      style={{ height: "calc(100vh - 64px)" }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
     >
-      {/* Desktop: smooth white-to-transparent gradient, left to right */}
-      <div
-        className="absolute inset-0 hidden lg:block pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(255,255,255,1) 28%, rgba(255,255,255,0.92) 42%, rgba(255,255,255,0.55) 60%, rgba(255,255,255,0.08) 80%, rgba(255,255,255,0) 100%)",
-        }}
-      />
-      {/* Mobile: soft white veil so text is readable */}
-      <div
-        className="absolute inset-0 lg:hidden pointer-events-none"
-        style={{ background: "rgba(255,255,255,0.82)" }}
-      />
-
-      {/* Very subtle bottom shadow to separate from next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none bg-gradient-to-t from-white/30 to-transparent" />
-
-      {/* Content */}
-      <div className="relative z-10 w-full container mx-auto px-6 md:px-8 pt-36 pb-16 md:pb-20">
-        <div className="max-w-[520px]">
-
-          {/* Overline */}
-          <div className="flex items-center gap-3 mb-10">
-            <span className="h-px w-8 bg-[#ffd200]" />
-            <p className="text-[10px] tracking-[0.42em] uppercase font-bold text-[#111111]/50">
-              Mpumalanga, South Africa · Est. 2022
-            </p>
-          </div>
-
-          {/* Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-[68px] font-bold text-[#111111] leading-[1.0] tracking-[-0.02em] mb-8">
-            Mining<br />&amp; Industrial<br />
-            <span className="text-[#111111]/30">Support.</span>
-          </h1>
-
-          {/* Sub */}
-          <p className="text-[15px] md:text-base text-[#444444] leading-relaxed mb-10 max-w-[380px]">
-            Built for demanding environments. Reliability, safety, and
-            operational excellence — delivered across Mpumalanga and beyond.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-start gap-3">
-            <Button
-              size="lg"
-              className="bg-[#ffd200] hover:bg-[#e6c400] text-[#111111] rounded-none h-13 px-8 text-sm font-bold tracking-[0.08em] uppercase shadow-none"
-            >
-              Get Quote
-            </Button>
-            <a
-              href="#profile"
-              className="inline-flex items-center h-13 px-4 text-[#111111] font-semibold hover:text-[#ffd200] transition-colors text-sm group border-b border-[#111111]/15 hover:border-[#ffd200]/50 py-3"
-            >
-              <Download className="mr-2 w-4 h-4 shrink-0" />
-              Download Company Profile
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
-            </a>
-          </div>
-
-          {/* Stat row */}
-          <div className="flex items-center gap-6 md:gap-10 mt-16 pt-8 border-t border-[#111111]/10">
-            {[
-              { val: "4M+", label: "Tons Handled" },
-              { val: "6", label: "Core Services" },
-              { val: "100%", label: "Client Focused" },
-            ].map((stat, i) => (
-              <div key={i} className="flex flex-col gap-1">
-                <span className="text-2xl md:text-3xl font-bold text-[#111111] leading-none">
-                  {stat.val}
-                </span>
-                <span className="text-[9px] text-[#888888] uppercase tracking-[0.25em] font-semibold">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-
+      {/* Background slides */}
+      {slides.map((slide, i) => (
+        <div
+          key={i}
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          style={{ opacity: active === i ? 1 : 0 }}
+        >
+          <img
+            src={slide.image}
+            alt={slide.title}
+            className="w-full h-full object-cover"
+          />
+          {/* Arcadis-style: strong bottom gradient + left fade */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.10) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(0,0,0,0.30) 0%, transparent 60%)",
+            }}
+          />
         </div>
+      ))}
+
+      {/* Bottom content bar */}
+      <div className="absolute bottom-0 left-0 right-0 pb-12 md:pb-16">
+        <div className="container mx-auto px-6 md:px-8">
+          <div className="flex items-end justify-between gap-8">
+
+            {/* Text — left side */}
+            <div className="flex-1 max-w-2xl">
+              <p className="text-[#ffd200] text-[9px] tracking-[0.45em] uppercase font-bold mb-5">
+                {slides[active].label}
+              </p>
+              <h1
+                className="text-[clamp(2.4rem,5.5vw,4.2rem)] font-bold text-white leading-[1.02] mb-6"
+                style={{ fontFamily: "var(--app-font-heading)" }}
+              >
+                {slides[active].title.split("\n").map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </h1>
+              <a
+                href={slides[active].href}
+                className="inline-flex items-center gap-2 text-white text-sm font-semibold tracking-wide hover:text-[#ffd200] transition-colors group border-b border-white/25 hover:border-[#ffd200]/60 pb-0.5"
+              >
+                {slides[active].cta}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+
+            {/* Controls — right side (Arcadis-style) */}
+            <div className="shrink-0 flex flex-col items-end gap-4">
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={prev}
+                  className="w-9 h-9 border border-white/25 hover:border-[#ffd200] hover:text-[#ffd200] text-white flex items-center justify-center transition-all duration-200"
+                  aria-label="Previous"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={next}
+                  className="w-9 h-9 border border-white/25 hover:border-[#ffd200] hover:text-[#ffd200] text-white flex items-center justify-center transition-all duration-200"
+                  aria-label="Next"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+              <p className="text-white/40 font-mono text-[11px] tracking-widest">
+                {String(active + 1).padStart(2, "0")} /{" "}
+                {String(slides.length).padStart(2, "0")}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Progress bar — Arcadis style (thin line, fills per slide) */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/10">
+        <div
+          className="h-full bg-[#ffd200] transition-all duration-300"
+          style={{ width: `${((active + 1) / slides.length) * 100}%` }}
+        />
       </div>
     </section>
   );
