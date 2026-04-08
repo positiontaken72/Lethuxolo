@@ -10,7 +10,7 @@ const slides = [
     href: "#services",
   },
   {
-    image: "/images/service-bulk-transport.png",
+    image: "/images/service-bulk-transport-new.png",
     label: "LOGISTICS",
     title: "Bulk Transportation\nAcross South Africa.",
     cta: "Bulk transportation",
@@ -24,14 +24,14 @@ const slides = [
     href: "#yellow-plant",
   },
   {
-    image: "/images/service-road-maintenance.png",
+    image: "/images/service-road-maintenance-new.jpg",
     label: "INFRASTRUCTURE",
     title: "Road Maintenance\n& Rehabilitation.",
     cta: "Road maintenance",
     href: "#road-maintenance",
   },
   {
-    image: "/images/service-industrial-cleaning.png",
+    image: "/images/service-industrial-cleaning-new.jpeg",
     label: "OPERATIONS",
     title: "Industrial Cleaning\nAt Scale.",
     cta: "Industrial cleaning",

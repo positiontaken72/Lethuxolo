@@ -1,5 +1,5 @@
 import { ChevronDown, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,11 +25,21 @@ const serviceLinks = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 8);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   return (
     <>
-      <header className="w-full sticky top-0 z-50 bg-[#111111]">
-        <div className="px-6 md:px-8 h-16 flex items-center justify-between">
+      <header
+        className="w-full sticky top-0 z-50 bg-white transition-shadow duration-300"
+        style={{ boxShadow: scrolled ? "0 1px 0 0 #e5e5e5" : "none", borderBottom: "1px solid #e8e8e8" }}
+      >
+        <div className="px-6 md:px-8 h-[68px] flex items-center justify-between">
 
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 shrink-0">
@@ -39,40 +49,48 @@ export function Navbar() {
               className="h-9 w-9 object-contain rounded-full"
             />
             <div className="hidden sm:flex flex-col leading-tight">
-              <span className="text-white font-semibold text-[15px] tracking-wide whitespace-nowrap" style={{ fontFamily: "var(--app-font-heading)" }}>
+              <span
+                className="text-[#111111] font-bold text-[15px] tracking-tight whitespace-nowrap"
+                style={{ fontFamily: "'Georgia', 'Times New Roman', serif", letterSpacing: "-0.01em" }}
+              >
                 Lethuxolo Trading
               </span>
-              <span className="text-white/35 text-[10px] tracking-[0.18em] uppercase whitespace-nowrap font-light">
+              <span className="text-[#888888] text-[9.5px] tracking-[0.22em] uppercase whitespace-nowrap font-medium">
                 Inspired by the Impossible
               </span>
             </div>
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="px-4 py-2 text-[11px] font-semibold text-white/55 hover:text-white transition-colors tracking-[0.15em] uppercase"
+                className="px-4 py-2 text-[13px] font-medium text-[#444444] hover:text-[#111111] transition-colors"
+                style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
               >
                 {link.label}
               </a>
             ))}
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 px-4 py-2 text-[11px] font-semibold text-white/55 hover:text-white transition-colors tracking-[0.15em] uppercase outline-none">
-                Services <ChevronDown className="w-3 h-3 mt-px" />
+              <DropdownMenuTrigger
+                className="flex items-center gap-1 px-4 py-2 text-[13px] font-medium text-[#444444] hover:text-[#111111] transition-colors outline-none"
+                style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              >
+                Services <ChevronDown className="w-3.5 h-3.5 mt-px opacity-60" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="start"
-                className="bg-[#1a1a1a] border-white/10 rounded-none w-56 p-1"
+                className="bg-white border border-[#e8e8e8] rounded-none shadow-lg w-60 p-1.5"
               >
                 {serviceLinks.map((s) => (
-                  <DropdownMenuItem key={s.label} className="rounded-none focus:bg-white/5">
+                  <DropdownMenuItem key={s.label} className="rounded-none focus:bg-[#f7f7f7] px-0">
                     <a
                       href={s.href}
-                      className="w-full text-[11px] text-white/60 hover:text-white tracking-wide uppercase py-0.5"
+                      className="w-full text-[13px] text-[#444444] hover:text-[#111111] px-3 py-1.5 block"
+                      style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
                     >
                       {s.label}
                     </a>
@@ -81,7 +99,7 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <div className="ml-4 pl-4 border-l border-white/10">
+            <div className="ml-5 pl-5 border-l border-[#e5e5e5]">
               <a
                 href="#contact"
                 className="inline-block bg-[#ffd200] hover:bg-[#e6c400] text-[#111111] px-6 py-2.5 text-[11px] font-bold tracking-[0.15em] uppercase transition-colors"
@@ -93,7 +111,7 @@ export function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden text-white/70 hover:text-white p-1 transition-colors"
+            className="lg:hidden text-[#444444] hover:text-[#111111] p-1 transition-colors"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
@@ -105,45 +123,53 @@ export function Navbar() {
       {/* Mobile overlay */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[100] flex">
-          {/* Backdrop */}
           <div
-            className="flex-1 bg-black/60 backdrop-blur-sm"
+            className="flex-1 bg-black/30 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}
           />
-          {/* Panel */}
-          <div className="w-[300px] bg-[#111111] h-full flex flex-col">
-            <div className="flex items-center justify-between px-6 h-16 border-b border-white/8">
-              <span className="text-white font-semibold text-sm tracking-wide" style={{ fontFamily: "var(--app-font-heading)" }}>
+          <div className="w-[300px] bg-white h-full flex flex-col border-l border-[#e8e8e8]">
+            <div className="flex items-center justify-between px-6 h-[68px] border-b border-[#e8e8e8]">
+              <span
+                className="text-[#111111] font-bold text-[15px]"
+                style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+              >
                 Menu
               </span>
               <button
                 onClick={() => setMobileOpen(false)}
-                className="text-white/50 hover:text-white transition-colors"
+                className="text-[#888888] hover:text-[#111111] transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <nav className="flex flex-col px-6 py-8 gap-1 flex-1">
+            <nav className="flex flex-col px-6 py-6 gap-0 flex-1 overflow-y-auto">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="py-3 text-[11px] font-semibold text-white/50 hover:text-white tracking-[0.18em] uppercase border-b border-white/5 transition-colors"
+                  className="py-3.5 text-[13px] text-[#444444] hover:text-[#111111] border-b border-[#f0f0f0] transition-colors"
+                  style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="py-3 border-b border-white/5">
-                <p className="text-[10px] text-white/30 tracking-[0.18em] uppercase mb-3 font-semibold">Services</p>
-                <div className="flex flex-col gap-2">
+              <div className="py-4 border-b border-[#f0f0f0]">
+                <p
+                  className="text-[10px] text-[#aaaaaa] tracking-[0.2em] uppercase mb-3 font-semibold"
+                  style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+                >
+                  Services
+                </p>
+                <div className="flex flex-col gap-2.5">
                   {serviceLinks.map((s) => (
                     <a
                       key={s.label}
                       href={s.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-[11px] text-white/40 hover:text-white/80 tracking-wide pl-2 transition-colors"
+                      className="text-[13px] text-[#666666] hover:text-[#111111] transition-colors"
+                      style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
                     >
                       {s.label}
                     </a>
@@ -152,7 +178,7 @@ export function Navbar() {
               </div>
             </nav>
 
-            <div className="px-6 pb-8">
+            <div className="px-6 pb-8 pt-4">
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
