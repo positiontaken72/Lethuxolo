@@ -4,36 +4,41 @@ import { ArrowRight, ArrowLeft } from "lucide-react";
 const slides = [
   {
     image: "/images/hero-open-pit.jpeg",
-    label: "LETHUXOLO TRADING",
+    label: "Mining & Industrial",
     title: "Mining & Industrial\nSupport Services.",
+    sub: "Mpumalanga, South Africa · Est. 2022",
     cta: "Explore our services",
     href: "#services",
   },
   {
     image: "/images/service-bulk-transport-new.png",
-    label: "LOGISTICS",
+    label: "Logistics",
     title: "Bulk Transportation\nAcross South Africa.",
+    sub: "Coal · Manganese · Steel",
     cta: "Bulk transportation",
     href: "#bulk-transport",
   },
   {
     image: "/images/service-yellow-plant.png",
-    label: "EQUIPMENT",
+    label: "Equipment",
     title: "Yellow Plant\nMachinery Operations.",
+    sub: "Excavators · Loaders · Dump Trucks",
     cta: "Plant machinery",
     href: "#yellow-plant",
   },
   {
     image: "/images/service-road-maintenance-new.jpg",
-    label: "INFRASTRUCTURE",
+    label: "Infrastructure",
     title: "Road Maintenance\n& Rehabilitation.",
+    sub: "Mining Access Routes · Compliance",
     cta: "Road maintenance",
     href: "#road-maintenance",
   },
   {
     image: "/images/service-industrial-cleaning-new.jpeg",
-    label: "OPERATIONS",
+    label: "Operations",
     title: "Industrial Cleaning\nAt Scale.",
+    sub: "Safety-First · Protocol-Driven",
     cta: "Industrial cleaning",
     href: "#industrial-cleaning",
   },
@@ -58,105 +63,134 @@ export function Hero() {
   return (
     <section
       className="relative w-full overflow-hidden bg-[#111111]"
-      style={{ height: "calc(100vh - 64px)" }}
+      style={{ height: "clamp(380px, 52vw, 520px)" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Background slides */}
+      {/* ── Slides ── */}
       {slides.map((slide, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          className="absolute inset-0 transition-opacity duration-700 ease-in-out flex"
           style={{ opacity: active === i ? 1 : 0 }}
         >
-          <img
-            src={slide.image}
-            alt={slide.title}
-            className="w-full h-full object-cover"
-          />
-          {/* Arcadis-style: strong bottom gradient + left fade */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.10) 100%)",
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to right, rgba(0,0,0,0.30) 0%, transparent 60%)",
-            }}
-          />
+          {/* LEFT PANEL — dark overlay, text here */}
+          <div className="relative w-[46%] h-full overflow-hidden">
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              style={{ transform: "scale(1.04)" }}
+            />
+            {/* Heavy dark veil for text legibility */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.68) 75%, rgba(0,0,0,0.55) 100%)",
+              }}
+            />
+          </div>
+
+          {/* RIGHT PANEL — bright, lighter treatment */}
+          <div className="relative w-[54%] h-full overflow-hidden">
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+            {/* Subtle veil only — keeps image bright */}
+            <div
+              className="absolute inset-0"
+              style={{ background: "rgba(0,0,0,0.12)" }}
+            />
+            {/* Left-edge fade to blend panels */}
+            <div
+              className="absolute inset-y-0 left-0 w-20"
+              style={{
+                background:
+                  "linear-gradient(to right, rgba(0,0,0,0.55) 0%, transparent 100%)",
+              }}
+            />
+          </div>
         </div>
       ))}
 
-      {/* Bottom content bar */}
-      <div className="absolute bottom-0 left-0 right-0 pb-12 md:pb-16">
-        <div className="container mx-auto px-6 md:px-8">
-          <div className="flex items-end justify-between gap-8">
+      {/* ── Text overlay — sits above both panels ── */}
+      <div className="absolute inset-0 z-10 flex items-center">
+        <div className="w-[46%] px-8 md:px-12 lg:px-16">
+          {/* Overline */}
+          <p
+            className="text-[#ffd200] text-[10px] tracking-[0.4em] uppercase font-bold mb-5"
+            style={{ fontFamily: "var(--app-font-sans)" }}
+          >
+            {slides[active].label}
+          </p>
 
-            {/* Text — left side */}
-            <div className="flex-1 max-w-2xl">
-              <p className="text-[#ffd200] text-[9px] tracking-[0.45em] uppercase font-bold mb-5">
-                {slides[active].label}
-              </p>
-              <h1
-                className="text-[clamp(2.4rem,5.5vw,4.2rem)] font-bold text-white leading-[1.02] mb-6"
-                style={{ fontFamily: "var(--app-font-heading)" }}
-              >
-                {slides[active].title.split("\n").map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-              </h1>
-              <a
-                href={slides[active].href}
-                className="inline-flex items-center gap-2 text-white text-sm font-semibold tracking-wide hover:text-[#ffd200] transition-colors group border-b border-white/25 hover:border-[#ffd200]/60 pb-0.5"
-              >
-                {slides[active].cta}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
+          {/* Headline */}
+          <h1
+            className="text-white font-black leading-[1.05] mb-4"
+            style={{
+              fontFamily: "var(--app-font-heading)",
+              fontSize: "clamp(1.7rem, 3.2vw, 2.6rem)",
+            }}
+          >
+            {slides[active].title.split("\n").map((line, idx) => (
+              <span key={idx}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </h1>
 
-            {/* Controls — right side (Arcadis-style) */}
-            <div className="shrink-0 flex flex-col items-end gap-4">
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={prev}
-                  className="w-9 h-9 border border-white/25 hover:border-[#ffd200] hover:text-[#ffd200] text-white flex items-center justify-center transition-all duration-200"
-                  aria-label="Previous"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={next}
-                  className="w-9 h-9 border border-white/25 hover:border-[#ffd200] hover:text-[#ffd200] text-white flex items-center justify-center transition-all duration-200"
-                  aria-label="Next"
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-              <p className="text-white/40 font-mono text-[11px] tracking-widest">
-                {String(active + 1).padStart(2, "0")} /{" "}
-                {String(slides.length).padStart(2, "0")}
-              </p>
-            </div>
+          {/* Sub-label */}
+          <p
+            className="text-white/55 text-[12.5px] mb-7"
+            style={{ fontFamily: "var(--app-font-sans)" }}
+          >
+            {slides[active].sub}
+          </p>
 
-          </div>
+          {/* CTA — solid button, Arcadis style */}
+          <a
+            href={slides[active].href}
+            className="inline-flex items-center gap-2.5 bg-[#ffd200] hover:bg-[#e6c400] text-[#111111] px-5 py-3 text-[11.5px] font-bold tracking-[0.1em] uppercase transition-colors group"
+            style={{ fontFamily: "var(--app-font-sans)" }}
+          >
+            {slides[active].cta}
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </a>
         </div>
       </div>
 
-      {/* Progress bar — Arcadis style (thin line, fills per slide) */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/10">
-        <div
-          className="h-full bg-[#ffd200] transition-all duration-300"
-          style={{ width: `${((active + 1) / slides.length) * 100}%` }}
-        />
+      {/* ── Centered slide counter — Arcadis signature ── */}
+      <div className="absolute bottom-5 left-0 right-0 z-20 flex items-center justify-center gap-4">
+        <button
+          onClick={prev}
+          className="w-8 h-8 rounded-full border border-white/35 hover:border-[#ffd200] text-white hover:text-[#ffd200] flex items-center justify-center transition-all duration-200"
+          aria-label="Previous"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" />
+        </button>
+
+        <span
+          className="text-white text-[12px] font-semibold tracking-widest tabular-nums"
+          style={{ fontFamily: "var(--app-font-sans)" }}
+        >
+          {active + 1} / {slides.length}
+        </span>
+
+        <button
+          onClick={next}
+          className="w-8 h-8 rounded-full border border-white/35 hover:border-[#ffd200] text-white hover:text-[#ffd200] flex items-center justify-center transition-all duration-200"
+          aria-label="Next"
+        >
+          <ArrowRight className="w-3.5 h-3.5" />
+        </button>
       </div>
+
+      {/* ── Yellow accent bar — Arcadis signature ── */}
+      <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-[#ffd200] z-20" />
     </section>
   );
 }
