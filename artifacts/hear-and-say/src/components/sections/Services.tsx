@@ -1,229 +1,276 @@
-import { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
 const services = [
   {
-    index: "01",
     title: "Bulk Transportation",
-    short: "Coal · Manganese · Steel logistics",
+    category: "Logistics",
     description:
-      "Efficient and reliable transportation of coal, manganese, steel, and other bulk materials. We maintain consistent supply chain movement with full fleet readiness and real-time coordination across supply routes.",
+      "Reliable movement of coal, manganese, and steel across supply chains. Full fleet readiness with real-time coordination — keeping operations running without interruption.",
     image: "/images/service-bulk-transport.png",
     id: "bulk-transport",
   },
   {
-    index: "02",
     title: "Yellow Plant Machinery",
-    short: "Excavators · Loaders · Dump trucks",
+    category: "Equipment",
     description:
-      "Provision, rental, and operation of heavy-duty equipment including excavators, loaders, and dump trucks. Performance and uptime are non-negotiable — we mobilize fast and keep machines running.",
+      "Provision and operation of excavators, loaders, and dump trucks. Performance and uptime are non-negotiable — rapid mobilization for any scale of operation.",
     image: "/images/service-yellow-plant.png",
     id: "yellow-plant",
   },
   {
-    index: "03",
     title: "Road Maintenance",
-    short: "Grading · Resurfacing · Repair",
+    category: "Infrastructure",
     description:
-      "Maintenance and rehabilitation of mining and industrial roads to ensure operational continuity. From routine grading to full resurfacing, we keep access routes safe and operational at all times.",
+      "Grading, resurfacing, and rehabilitation of mining roads. We keep access routes operational, safe, and compliant under the most demanding conditions.",
     image: "/images/service-road-maintenance.png",
     id: "road-maintenance",
   },
   {
-    index: "04",
     title: "Industrial Cleaning",
-    short: "Compliance · Safety · Large-scale environments",
+    category: "Operations",
     description:
-      "Professional cleaning services engineered for large-scale industrial environments. Every engagement meets compliance standards and is executed with full safety protocol adherence.",
+      "Large-scale cleaning services built around compliance and safety. Executed with full protocol adherence across industrial and mining environments.",
     image: "/images/service-industrial-cleaning.png",
     id: "industrial-cleaning",
   },
   {
-    index: "05",
     title: "Supply of Goods",
-    short: "Procurement · Delivery · Operations support",
+    category: "Procurement",
     description:
-      "End-to-end procurement and delivery of essential materials and equipment for active mining and industrial operations. We eliminate delays and keep your supply chain unbroken.",
+      "End-to-end procurement and delivery of materials and equipment. Eliminating supply delays and keeping active operations fully resourced.",
     image: "/images/service-supply-goods.png",
     id: "supply-goods",
   },
   {
-    index: "06",
     title: "Lighting Solutions",
-    short: "Portable plants · Night operations · Low-visibility sites",
+    category: "Site Services",
     description:
-      "Provision of portable lighting plants to support night operations and low-visibility working conditions. Reliable illumination deployed rapidly across any site configuration.",
+      "Portable lighting plants deployed for night operations and low-visibility sites. Rapid setup, industrial-grade reliability.",
     image: "/images/service-lighting.png",
     id: "lighting",
   },
 ];
 
+const INTERVAL_MS = 3800;
+
 export function Services() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [prevActive, setPrevActive] = useState<number | null>(null);
+  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const goTo = useCallback(
+    (index: number, dir?: "next" | "prev") => {
+      setPrevActive(active);
+      setDirection(dir ?? (index > active ? "next" : "prev"));
+      setActive(index);
+    },
+    [active]
+  );
+
+  const goNext = useCallback(() => {
+    goTo((active + 1) % services.length, "next");
+  }, [active, goTo]);
+
+  const goPrev = useCallback(() => {
+    goTo((active - 1 + services.length) % services.length, "prev");
+  }, [active, goTo]);
+
+  useEffect(() => {
+    if (paused) return;
+    timerRef.current = setInterval(goNext, INTERVAL_MS);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [paused, goNext]);
+
+  const handleMouseEnter = () => setPaused(true);
+  const handleMouseLeave = () => setPaused(false);
 
   return (
     <section id="services" className="bg-white">
 
-      {/* Header strip */}
-      <div className="border-b border-[#111111]/10 py-14 md:py-20">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <p className="text-[10px] tracking-[0.35em] uppercase text-[#888888] mb-5 font-semibold">
-                What We Deliver
-              </p>
-              <h2 className="text-4xl md:text-5xl lg:text-[52px] font-bold text-[#111111] leading-[1.05] tracking-tight">
-                Our Services
-              </h2>
-            </div>
-            <p className="text-[#666666] max-w-xs text-sm leading-relaxed md:text-right border-t md:border-t-0 md:border-l border-[#111111]/10 pt-4 md:pt-0 md:pl-8">
-              Every service is delivered with emphasis on reliability,
-              safety compliance, efficiency, and responsiveness.
+      {/* White header strip */}
+      <div className="container mx-auto px-6 md:px-8 pt-20 pb-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            <p className="text-[10px] tracking-[0.38em] uppercase font-bold text-[#ffd200] mb-4">
+              What We Deliver
             </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] leading-tight">
+              Our Services
+            </h2>
           </div>
+          <p className="text-[#888888] text-sm leading-relaxed max-w-xs md:text-right">
+            Six specialised service lines built for the demands of mining and
+            heavy industry.
+          </p>
         </div>
       </div>
 
-      {/* Body */}
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="flex flex-col lg:flex-row lg:gap-0">
+      {/* Cinematic panel */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: "clamp(480px, 62vh, 700px)" }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {/* Background image layers — crossfade */}
+        {services.map((service, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+            style={{ opacity: active === i ? 1 : 0 }}
+          >
+            <img
+              src={service.image}
+              alt={service.title}
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Cinematic dark overlay — left heavier for text */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.50) 45%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.05) 100%)",
+              }}
+            />
+          </div>
+        ))}
 
-          {/* Left: Interactive numbered list */}
-          <div className="flex-1 lg:pr-12 xl:pr-20 divide-y divide-[#111111]/8">
-            {services.map((service, i) => {
-              const isActive = active === i;
-              return (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className="w-full text-left group"
+        {/* Content overlay */}
+        <div className="relative z-10 h-full flex flex-col justify-between">
+
+          {/* Service info — vertically centered */}
+          <div className="flex-1 flex items-center">
+            <div className="container mx-auto px-6 md:px-8">
+              <div className="max-w-xl">
+
+                {/* Category + counter */}
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[#ffd200] text-[10px] tracking-[0.35em] uppercase font-bold">
+                    {services[active].category}
+                  </span>
+                  <span className="text-white/20 text-[10px]">·</span>
+                  <span className="text-white/30 text-[10px] font-mono tracking-wider">
+                    {String(active + 1).padStart(2, "0")} / {String(services.length).padStart(2, "0")}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-5 tracking-tight">
+                  {services[active].title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-white/65 text-sm md:text-base leading-relaxed max-w-md mb-8">
+                  {services[active].description}
+                </p>
+
+                {/* CTA */}
+                <a
+                  href={`#${services[active].id}`}
+                  className="inline-flex items-center gap-2 text-white border-b border-white/30 hover:border-[#ffd200] hover:text-[#ffd200] transition-colors text-sm font-bold pb-0.5 tracking-wide group"
                 >
-                  <div className="flex items-stretch gap-0 py-7 md:py-9 relative">
-
-                    {/* Left yellow accent line */}
-                    <div
-                      className={`w-[3px] mr-6 md:mr-8 shrink-0 rounded-full transition-all duration-500 ${
-                        isActive ? "bg-[#ffd200]" : "bg-transparent"
-                      }`}
-                    />
-
-                    {/* Index number */}
-                    <span
-                      className={`text-[11px] font-mono font-bold tracking-widest shrink-0 mt-1.5 transition-colors duration-300 ${
-                        isActive
-                          ? "text-[#ffd200]"
-                          : "text-[#cccccc] group-hover:text-[#999999]"
-                      }`}
-                    >
-                      {service.index}
-                    </span>
-
-                    {/* Content */}
-                    <div className="flex-1 ml-5 md:ml-8">
-                      <div className="flex items-start justify-between gap-4">
-                        <h3
-                          className={`text-xl md:text-2xl font-bold leading-snug transition-colors duration-300 ${
-                            isActive
-                              ? "text-[#111111]"
-                              : "text-[#999999] group-hover:text-[#333333]"
-                          }`}
-                        >
-                          {service.title}
-                        </h3>
-                        <ArrowUpRight
-                          className={`w-5 h-5 shrink-0 mt-1 transition-all duration-300 ${
-                            isActive
-                              ? "text-[#ffd200] opacity-100 translate-x-0 -translate-y-0"
-                              : "text-[#cccccc] group-hover:text-[#aaaaaa] translate-x-1 translate-y-1"
-                          }`}
-                        />
-                      </div>
-
-                      {/* Short tag — always visible when inactive */}
-                      <p
-                        className={`text-xs text-[#aaaaaa] mt-1 tracking-wide transition-all duration-300 ${
-                          isActive ? "opacity-0 h-0 mb-0" : "opacity-100 mt-2"
-                        }`}
-                      >
-                        {service.short}
-                      </p>
-
-                      {/* Expanded description */}
-                      <div
-                        className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                          isActive
-                            ? "max-h-48 opacity-100 mt-4"
-                            : "max-h-0 opacity-0 mt-0"
-                        }`}
-                      >
-                        <p className="text-[#555555] text-sm md:text-base leading-relaxed pr-4">
-                          {service.description}
-                        </p>
-                        <a
-                          href={`#${service.id}`}
-                          className="inline-flex items-center gap-2 mt-5 text-[#111111] font-bold text-sm border-b border-[#ffd200] pb-0.5 hover:text-[#ffd200] transition-colors duration-200"
-                        >
-                          Request this service
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
+                  Request this service
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Right: Portrait image panel — sticky */}
-          <div className="hidden lg:block w-[340px] xl:w-[380px] shrink-0 py-10 border-l border-[#111111]/8 pl-12 xl:pl-16">
-            <div className="sticky top-24">
+          {/* Bottom nav strip */}
+          <div className="border-t border-white/10 bg-black/40 backdrop-blur-[2px]">
+            <div className="container mx-auto px-6 md:px-8">
 
-              {/* Portrait image frame */}
-              <div className="relative aspect-[3/4] rounded-[4px] overflow-hidden bg-[#f0f0f0]">
+              {/* Desktop: all tabs */}
+              <div className="hidden md:flex">
                 {services.map((service, i) => (
-                  <img
-                    key={i}
-                    src={service.image}
-                    alt={service.title}
-                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out ${
-                      active === i
-                        ? "opacity-100 scale-100"
-                        : "opacity-0 scale-[1.04]"
-                    }`}
-                  />
-                ))}
-
-                {/* Bottom overlay with service info */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-6">
-                  <p className="text-[#ffd200] text-[10px] tracking-[0.3em] uppercase font-bold mb-1">
-                    {services[active].index} / 06
-                  </p>
-                  <p className="text-white font-bold text-lg leading-tight">
-                    {services[active].title}
-                  </p>
-                </div>
-              </div>
-
-              {/* Progress dots */}
-              <div className="flex items-center gap-1.5 mt-5">
-                {services.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setActive(i)}
-                    className={`h-[3px] rounded-full transition-all duration-400 ${
+                    onClick={() => goTo(i)}
+                    className={`flex-1 py-4 px-2 text-center transition-all duration-300 border-t-2 group ${
                       active === i
-                        ? "bg-[#ffd200] w-6"
-                        : "bg-[#111111]/15 w-3 hover:bg-[#111111]/30"
+                        ? "border-[#ffd200] text-white"
+                        : "border-transparent text-white/35 hover:text-white/70"
                     }`}
-                    aria-label={`View ${services[i].title}`}
-                  />
+                  >
+                    <span className="block text-[10px] font-bold uppercase tracking-[0.18em] leading-tight">
+                      {service.title}
+                    </span>
+                  </button>
                 ))}
               </div>
+
+              {/* Mobile: title + arrows */}
+              <div className="flex md:hidden items-center justify-between py-4">
+                <button
+                  onClick={goPrev}
+                  className="w-9 h-9 flex items-center justify-center text-white/50 hover:text-white transition-colors"
+                  aria-label="Previous"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                </button>
+                <div className="text-center">
+                  <p className="text-white text-xs font-bold uppercase tracking-wider">
+                    {services[active].title}
+                  </p>
+                  <p className="text-white/30 text-[10px] mt-0.5">
+                    {active + 1} of {services.length}
+                  </p>
+                </div>
+                <button
+                  onClick={goNext}
+                  className="w-9 h-9 flex items-center justify-center text-white/50 hover:text-white transition-colors"
+                  aria-label="Next"
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
+
             </div>
           </div>
-
         </div>
+
+        {/* Side arrow controls — desktop */}
+        <button
+          onClick={goPrev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-none bg-white/10 hover:bg-[#ffd200] border border-white/20 hover:border-[#ffd200] flex items-center justify-center transition-all duration-200 hidden md:flex group"
+          aria-label="Previous service"
+        >
+          <ArrowLeft className="w-4 h-4 text-white group-hover:text-[#111111]" />
+        </button>
+        <button
+          onClick={goNext}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-none bg-white/10 hover:bg-[#ffd200] border border-white/20 hover:border-[#ffd200] flex items-center justify-center transition-all duration-200 hidden md:flex group"
+          aria-label="Next service"
+        >
+          <ArrowRight className="w-4 h-4 text-white group-hover:text-[#111111]" />
+        </button>
+
+        {/* Auto-progress bar */}
+        {!paused && (
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-white/10 z-20">
+            <div
+              key={active}
+              className="h-full bg-[#ffd200]"
+              style={{
+                animation: `progressBar ${INTERVAL_MS}ms linear forwards`,
+              }}
+            />
+          </div>
+        )}
       </div>
+
+      <style>{`
+        @keyframes progressBar {
+          from { width: 0%; }
+          to { width: 100%; }
+        }
+      `}</style>
+
     </section>
   );
 }
