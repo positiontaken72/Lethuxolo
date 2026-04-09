@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 export function CtaBanner() {
   return (
@@ -23,17 +23,17 @@ export function CtaBanner() {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="mailto:info@lethuxolotrading.co.za"
+                href="#"
                 className="inline-flex items-center gap-2 bg-[#ffd200] text-[#111111] px-7 py-3.5 text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-white transition-colors"
               >
-                Get a Quote
-                <ArrowRight className="w-4 h-4" />
+                Download Company Profile
+                <Download className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="mailto:info@lethuxolotrading.co.za"
                 className="inline-flex items-center gap-2 border border-white/20 text-white px-7 py-3.5 text-[11px] font-bold tracking-[0.18em] uppercase hover:border-[#ffd200] hover:text-[#ffd200] transition-colors"
               >
-                Download Profile
+                Get a Quote
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
@@ -50,9 +50,9 @@ export function CtaBanner() {
             <div className="absolute inset-0 flex flex-col justify-end p-12">
               <div className="grid grid-cols-2 gap-8">
                 {[
-                  { value: "4M+", label: "Tons Handled" },
                   { value: "6", label: "Core Services" },
                   { value: "100%", label: "Client Focused" },
+                  { value: "Level 1", label: "B-BBEE Certified" },
                   { value: "2022", label: "Established" },
                 ].map((stat, i) => (
                   <div key={i}>

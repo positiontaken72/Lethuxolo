@@ -51,11 +51,6 @@ export function AboutIntro() {
                 className="w-full h-full object-cover object-center"
               />
             </div>
-            {/* Arcadis-style stat block anchored to image */}
-            <div className="absolute -bottom-6 -left-4 md:-left-8 bg-[#111111] px-6 py-5">
-              <p className="text-[#ffd200] text-3xl font-bold leading-none">4M+</p>
-              <p className="text-white/50 text-[9px] tracking-[0.25em] uppercase mt-1 font-semibold">Tons of coal handled</p>
-            </div>
           </div>
 
         </div>

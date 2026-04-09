@@ -43,14 +43,14 @@ export function Navbar() {
           transition: "box-shadow 0.2s",
         }}
       >
-        <div className="px-6 md:px-10 h-[76px] flex items-center justify-between gap-8">
+        <div className="px-6 md:px-10 h-[88px] flex items-center justify-between gap-8">
 
           {/* ── Logo block ── */}
           <a href="/" className="flex items-center gap-4 shrink-0 group">
             <img
               src="/lethuxolo-logo.png"
               alt="Lethuxolo Trading"
-              className="h-12 w-12 object-contain rounded-full ring-2 ring-[#ffd200]/30 group-hover:ring-[#ffd200]/60 transition-all"
+              className="h-[68px] w-[68px] object-contain rounded-full ring-2 ring-[#ffd200]/30 group-hover:ring-[#ffd200]/60 transition-all"
             />
             <div className="flex flex-col justify-center leading-none">
               <span
@@ -150,7 +150,7 @@ export function Navbar() {
           />
           <div className="w-[300px] bg-white h-full flex flex-col border-l border-[#e0e0e0] shadow-2xl">
             {/* Header */}
-            <div className="flex items-center justify-between px-6 h-[76px] border-b border-[#e8e8e8]">
+            <div className="flex items-center justify-between px-6 h-[88px] border-b border-[#e8e8e8]">
               <div className="flex items-center gap-3">
                 <img
                   src="/lethuxolo-logo.png"

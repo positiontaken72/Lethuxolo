@@ -99,7 +99,7 @@ export function Footer() {
               Contact Us
             </p>
             <ul className="flex flex-col gap-3 text-[13px] text-white/45">
-              <li>+27 (0) 000 000 000</li>
+              <li>066 518 4543</li>
               <li>info@lethuxolotrading.co.za</li>
               <li>Mpumalanga, South Africa</li>
             </ul>
