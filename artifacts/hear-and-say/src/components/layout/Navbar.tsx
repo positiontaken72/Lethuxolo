@@ -1,31 +1,27 @@
-import { ChevronDown, Menu, X, Search } from "lucide-react";
-import { useState, useEffect } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { ChevronDown, Menu, X, Linkedin, Mail } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 const navLinks = [
   { label: "About Us", href: "#about" },
   { label: "Leadership", href: "#leadership" },
-  { label: "Projects", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
 
 const serviceLinks = [
-  { label: "Bulk Transportation", href: "#bulk-transport" },
-  { label: "Yellow Plant Machinery", href: "#yellow-plant" },
-  { label: "Road Maintenance", href: "#road-maintenance" },
-  { label: "Industrial Cleaning", href: "#industrial-cleaning" },
-  { label: "Supply of Goods", href: "#supply-goods" },
-  { label: "Lighting Solutions", href: "#lighting" },
+  { label: "Bulk Transportation", sub: "Logistics", href: "#bulk-transport" },
+  { label: "Yellow Plant Machinery", sub: "Equipment", href: "#yellow-plant" },
+  { label: "Road Maintenance", sub: "Infrastructure", href: "#road-maintenance" },
+  { label: "Industrial Cleaning", sub: "Operations", href: "#industrial-cleaning" },
+  { label: "Supply of Goods", sub: "Procurement", href: "#supply-goods" },
+  { label: "Lighting Solutions", sub: "Site Services", href: "#lighting" },
 ];
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 4);
@@ -33,13 +29,22 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
+  const openDropdown = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setServicesOpen(true);
+  };
+
+  const closeDropdown = () => {
+    timeoutRef.current = setTimeout(() => setServicesOpen(false), 120);
+  };
+
   return (
     <>
       <header
         className="w-full sticky top-0 z-50 bg-white"
         style={{
           borderBottom: "1.5px solid #e0e0e0",
-          boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.07)" : "none",
+          boxShadow: scrolled ? "0 2px 16px rgba(0,0,0,0.08)" : "none",
           transition: "box-shadow 0.2s",
         }}
       >
@@ -47,21 +52,23 @@ export function Navbar() {
 
           {/* ── Logo block ── */}
           <a href="/" className="flex items-center gap-4 shrink-0 group">
-            <img
-              src="/lethuxolo-logo.png"
-              alt="Lethuxolo Trading"
-              className="h-[68px] w-[68px] object-contain rounded-full ring-2 ring-[#ffd200]/30 group-hover:ring-[#ffd200]/60 transition-all"
-            />
+            <div className="h-[64px] w-[64px] rounded-full ring-2 ring-[#ffd200]/30 group-hover:ring-[#ffd200]/70 transition-all overflow-hidden flex-shrink-0 bg-white">
+              <img
+                src="/lethuxolo-logo.png"
+                alt="Lethuxolo Trading"
+                className="h-full w-full object-cover scale-125"
+              />
+            </div>
             <div className="flex flex-col justify-center leading-none">
               <span
-                className="text-[#111111] font-black text-[22px] tracking-tight leading-tight whitespace-nowrap"
-                style={{ fontFamily: "var(--app-font-heading)", letterSpacing: "-0.02em" }}
+                className="text-[#111111] font-extrabold text-[20px] leading-tight whitespace-nowrap"
+                style={{ fontFamily: "var(--app-font-heading)", letterSpacing: "0.01em" }}
               >
                 Lethuxolo Trading
               </span>
               <span
-                className="text-[#888888] text-[10px] tracking-[0.28em] uppercase font-semibold mt-[3px] whitespace-nowrap"
-                style={{ fontFamily: "var(--app-font-sans)" }}
+                className="text-[#ffd200] text-[9.5px] tracking-[0.32em] uppercase font-semibold mt-[4px] whitespace-nowrap"
+                style={{ fontFamily: "var(--app-font-heading)" }}
               >
                 Inspired by the Impossible
               </span>
@@ -74,56 +81,79 @@ export function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="px-4 py-2 text-[14.5px] font-medium text-[#333333] hover:text-[#111111] transition-colors whitespace-nowrap"
+                className="px-4 py-2 text-[14px] font-medium text-[#444444] hover:text-[#111111] transition-colors whitespace-nowrap"
                 style={{ fontFamily: "var(--app-font-sans)" }}
               >
                 {link.label}
               </a>
             ))}
 
-            {/* Services dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className="flex items-center gap-1 px-4 py-2 text-[14.5px] font-medium text-[#333333] hover:text-[#111111] transition-colors outline-none whitespace-nowrap"
-                style={{ fontFamily: "var(--app-font-sans)" }}
-              >
-                Services <ChevronDown className="w-4 h-4 mt-0.5 opacity-50" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="end"
-                className="bg-white border border-[#e0e0e0] rounded-none shadow-xl w-64 p-2"
-              >
-                {serviceLinks.map((s) => (
-                  <DropdownMenuItem
-                    key={s.label}
-                    className="rounded-none focus:bg-[#f5f5f5] px-0 py-0"
-                  >
-                    <a
-                      href={s.href}
-                      className="w-full text-[13.5px] font-medium text-[#444444] hover:text-[#111111] px-3 py-2.5 block transition-colors"
-                      style={{ fontFamily: "var(--app-font-sans)" }}
-                    >
-                      {s.label}
-                    </a>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {/* Search icon */}
-            <button
-              className="p-2.5 ml-1 text-[#666666] hover:text-[#111111] transition-colors"
-              aria-label="Search"
+            {/* Services — custom hover panel */}
+            <div
+              ref={dropdownRef}
+              className="relative"
+              onMouseEnter={openDropdown}
+              onMouseLeave={closeDropdown}
             >
-              <Search className="w-[18px] h-[18px]" />
-            </button>
+              <button
+                className="flex items-center gap-1.5 px-4 py-2 text-[14px] font-medium text-[#444444] hover:text-[#111111] transition-colors outline-none whitespace-nowrap"
+                style={{ fontFamily: "var(--app-font-sans)" }}
+                onClick={() => setServicesOpen((v) => !v)}
+              >
+                Services
+                <ChevronDown
+                  className="w-3.5 h-3.5 opacity-50 transition-transform duration-200"
+                  style={{ transform: servicesOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                />
+              </button>
+
+              {/* Dropdown panel */}
+              {servicesOpen && (
+                <div
+                  className="absolute right-0 top-full mt-0 w-[420px] bg-[#111111] shadow-2xl z-50"
+                  onMouseEnter={openDropdown}
+                  onMouseLeave={closeDropdown}
+                >
+                  {/* Yellow top accent */}
+                  <div className="h-[3px] bg-[#ffd200]" />
+                  <div className="p-2">
+                    {serviceLinks.map((s) => (
+                      <a
+                        key={s.label}
+                        href={s.href}
+                        onClick={() => setServicesOpen(false)}
+                        className="flex items-center justify-between px-4 py-3.5 group hover:bg-white/5 transition-colors"
+                      >
+                        <div>
+                          <p
+                            className="text-white text-[13.5px] font-semibold group-hover:text-[#ffd200] transition-colors"
+                            style={{ fontFamily: "var(--app-font-heading)" }}
+                          >
+                            {s.label}
+                          </p>
+                          <p
+                            className="text-white/35 text-[10px] tracking-[0.2em] uppercase mt-0.5"
+                            style={{ fontFamily: "var(--app-font-sans)" }}
+                          >
+                            {s.sub}
+                          </p>
+                        </div>
+                        <div className="w-5 h-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="w-1.5 h-1.5 bg-[#ffd200] rotate-45" />
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* CTA */}
             <div className="ml-3 pl-3 border-l border-[#e0e0e0]">
               <a
                 href="#contact"
                 className="inline-block bg-[#ffd200] hover:bg-[#e6c400] text-[#111111] px-6 py-2.5 text-[12px] font-bold tracking-[0.12em] uppercase transition-colors whitespace-nowrap"
-                style={{ fontFamily: "var(--app-font-sans)" }}
+                style={{ fontFamily: "var(--app-font-heading)" }}
               >
                 Get Quote
               </a>
@@ -152,13 +182,15 @@ export function Navbar() {
             {/* Header */}
             <div className="flex items-center justify-between px-6 h-[88px] border-b border-[#e8e8e8]">
               <div className="flex items-center gap-3">
-                <img
-                  src="/lethuxolo-logo.png"
-                  alt="Lethuxolo"
-                  className="h-9 w-9 object-contain rounded-full"
-                />
+                <div className="h-10 w-10 rounded-full overflow-hidden flex-shrink-0 bg-white">
+                  <img
+                    src="/lethuxolo-logo.png"
+                    alt="Lethuxolo"
+                    className="h-full w-full object-cover scale-125"
+                  />
+                </div>
                 <span
-                  className="text-[#111111] font-black text-[15px] tracking-tight"
+                  className="text-[#111111] font-extrabold text-[15px] tracking-tight"
                   style={{ fontFamily: "var(--app-font-heading)" }}
                 >
                   Lethuxolo Trading
@@ -187,24 +219,34 @@ export function Navbar() {
               ))}
               <div className="py-4 border-b border-[#f0f0f0]">
                 <p
-                  className="text-[10px] text-[#aaaaaa] tracking-[0.22em] uppercase mb-3 font-bold"
-                  style={{ fontFamily: "var(--app-font-sans)" }}
+                  className="text-[10px] text-[#ffd200] tracking-[0.3em] uppercase mb-3 font-bold"
+                  style={{ fontFamily: "var(--app-font-heading)" }}
                 >
                   Services
                 </p>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-1">
                   {serviceLinks.map((s) => (
                     <a
                       key={s.label}
                       href={s.href}
                       onClick={() => setMobileOpen(false)}
-                      className="text-[13.5px] font-medium text-[#666666] hover:text-[#111111] transition-colors pl-1"
+                      className="py-2.5 px-2 text-[13.5px] font-medium text-[#555555] hover:text-[#111111] hover:bg-[#f8f8f8] transition-colors"
                       style={{ fontFamily: "var(--app-font-sans)" }}
                     >
                       {s.label}
                     </a>
                   ))}
                 </div>
+              </div>
+
+              {/* Social links in mobile menu */}
+              <div className="py-5 flex gap-4">
+                <a href="#" className="text-[#888888] hover:text-[#111111] transition-colors" aria-label="LinkedIn">
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a href="mailto:info@lethuxolotrading.co.za" className="text-[#888888] hover:text-[#111111] transition-colors" aria-label="Email">
+                  <Mail className="w-4 h-4" />
+                </a>
               </div>
             </nav>
 
@@ -213,7 +255,7 @@ export function Navbar() {
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
                 className="block w-full text-center bg-[#ffd200] hover:bg-[#e6c400] text-[#111111] py-4 text-[11px] font-bold tracking-[0.18em] uppercase transition-colors"
-                style={{ fontFamily: "var(--app-font-sans)" }}
+                style={{ fontFamily: "var(--app-font-heading)" }}
               >
                 Get Quote
               </a>

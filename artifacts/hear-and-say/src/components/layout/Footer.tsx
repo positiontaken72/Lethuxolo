@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 
 export function Footer() {
@@ -14,38 +14,53 @@ export function Footer() {
           {/* Brand Col */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <img
-                src="/lethuxolo-logo.png"
-                alt="Lethuxolo Trading Logo"
-                className="h-10 w-10 object-contain rounded-full"
-              />
+              <div className="h-10 w-10 rounded-full overflow-hidden flex-shrink-0 bg-white">
+                <img
+                  src="/lethuxolo-logo.png"
+                  alt="Lethuxolo Trading Logo"
+                  className="h-full w-full object-cover scale-125"
+                />
+              </div>
               <span
-                className="text-white font-bold text-[16px] leading-tight tracking-wide"
+                className="text-white font-bold text-[16px] leading-tight"
                 style={{ fontFamily: "var(--app-font-heading)" }}
               >
                 Lethuxolo<br />Trading
               </span>
             </div>
-            <p className="text-[13px] text-white/45 leading-relaxed max-w-[220px]">
+            <p
+              className="text-[13px] text-white/40 leading-relaxed max-w-[220px] font-light"
+              style={{ fontFamily: "var(--app-font-sans)" }}
+            >
               Inspired by the Impossible. Delivering reliable mining and
               industrial support services across South Africa.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="text-white/30 hover:text-[#ffd200] transition-colors"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/30 hover:text-[#ffd200] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="mailto:info@lethuxolotrading.co.za"
+                className="text-white/30 hover:text-[#ffd200] transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <p className="text-[9px] tracking-[0.35em] uppercase font-bold text-[#ffd200] mb-6">
+            <p
+              className="text-[9px] tracking-[0.35em] uppercase font-bold text-[#ffd200] mb-6"
+              style={{ fontFamily: "var(--app-font-heading)" }}
+            >
               Our Services
             </p>
             <ul className="flex flex-col gap-3">
@@ -60,7 +75,8 @@ export function Footer() {
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-[13px] text-white/45 hover:text-white transition-colors"
+                    className="text-[13px] text-white/40 hover:text-white transition-colors font-light"
+                    style={{ fontFamily: "var(--app-font-sans)" }}
                   >
                     {label}
                   </a>
@@ -71,7 +87,10 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <p className="text-[9px] tracking-[0.35em] uppercase font-bold text-[#ffd200] mb-6">
+            <p
+              className="text-[9px] tracking-[0.35em] uppercase font-bold text-[#ffd200] mb-6"
+              style={{ fontFamily: "var(--app-font-heading)" }}
+            >
               Company
             </p>
             <ul className="flex flex-col gap-3">
@@ -84,7 +103,8 @@ export function Footer() {
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-[13px] text-white/45 hover:text-white transition-colors"
+                    className="text-[13px] text-white/40 hover:text-white transition-colors font-light"
+                    style={{ fontFamily: "var(--app-font-sans)" }}
                   >
                     {label}
                   </a>
@@ -95,17 +115,21 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-[9px] tracking-[0.35em] uppercase font-bold text-[#ffd200] mb-6">
+            <p
+              className="text-[9px] tracking-[0.35em] uppercase font-bold text-[#ffd200] mb-6"
+              style={{ fontFamily: "var(--app-font-heading)" }}
+            >
               Contact Us
             </p>
-            <ul className="flex flex-col gap-3 text-[13px] text-white/45">
+            <ul className="flex flex-col gap-3 text-[13px] text-white/40 font-light" style={{ fontFamily: "var(--app-font-sans)" }}>
               <li>066 518 4543</li>
               <li>info@lethuxolotrading.co.za</li>
               <li>Mpumalanga, South Africa</li>
             </ul>
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 mt-6 text-[10px] font-bold tracking-[0.18em] uppercase text-white hover:text-[#ffd200] transition-colors group"
+              className="inline-flex items-center gap-1.5 mt-6 text-[10px] font-semibold tracking-[0.18em] uppercase text-white hover:text-[#ffd200] transition-colors group"
+              style={{ fontFamily: "var(--app-font-heading)" }}
             >
               Get a Quote
               <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -115,10 +139,13 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[11px] text-white/25 tracking-wide">
+          <p
+            className="text-[11px] text-white/25 tracking-wide font-light"
+            style={{ fontFamily: "var(--app-font-sans)" }}
+          >
             © {new Date().getFullYear()} Lethuxolo Trading. All rights reserved.
           </p>
-          <div className="flex gap-6 text-[11px] text-white/25">
+          <div className="flex gap-6 text-[11px] text-white/25" style={{ fontFamily: "var(--app-font-sans)" }}>
             <a href="#" className="hover:text-white/50 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white/50 transition-colors">Terms of Service</a>
           </div>

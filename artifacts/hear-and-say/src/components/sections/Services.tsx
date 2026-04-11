@@ -96,14 +96,14 @@ export function Services() {
       <div className="container mx-auto px-6 md:px-8 pt-20 pb-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <p className="text-[10px] tracking-[0.38em] uppercase font-bold text-[#ffd200] mb-4">
+            <p className="text-[10px] tracking-[0.38em] uppercase font-bold text-[#ffd200] mb-4" style={{ fontFamily: "var(--app-font-heading)" }}>
               What We Deliver
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] leading-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#111111] leading-tight" style={{ fontFamily: "var(--app-font-heading)" }}>
               Our Services
             </h2>
           </div>
-          <p className="text-[#888888] text-sm leading-relaxed max-w-xs md:text-right">
+          <p className="text-[#888888] text-sm leading-relaxed max-w-xs md:text-right font-light" style={{ fontFamily: "var(--app-font-sans)" }}>
             Six specialised service lines built for the demands of mining and
             heavy industry.
           </p>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft, Download } from "lucide-react";
 
 const slides = [
   {
@@ -151,14 +151,14 @@ export function Hero() {
             {slides[active].sub}
           </p>
 
-          {/* CTA — solid button, Arcadis style */}
+          {/* CTA — Download Company Profile */}
           <a
-            href={slides[active].href}
+            href="#contact"
             className="inline-flex items-center gap-2.5 bg-[#ffd200] hover:bg-[#e6c400] text-[#111111] px-5 py-3 text-[11.5px] font-bold tracking-[0.1em] uppercase transition-colors group"
-            style={{ fontFamily: "var(--app-font-sans)" }}
+            style={{ fontFamily: "var(--app-font-heading)" }}
           >
-            {slides[active].cta}
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            Download Company Profile
+            <Download className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
           </a>
         </div>
       </div>

@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const metrics = [
-  { value: "4M+", label: "Tons of coal handled", suffix: "" },
   { value: "2022", label: "Year established", suffix: "" },
   { value: "6", label: "Core service lines", suffix: "" },
   { value: "100%", label: "Client-focused delivery", suffix: "" },
+  { value: "Level 1", label: "B-BBEE Certified", suffix: "" },
 ];
 
 const regions = [
@@ -64,13 +64,13 @@ export function Locations() {
 
           {/* Left: text block */}
           <div>
-            <p className="text-[10px] tracking-[0.35em] uppercase text-[#ffd200] mb-5 font-semibold">
+            <p className="text-[10px] tracking-[0.35em] uppercase text-[#ffd200] mb-5 font-bold" style={{ fontFamily: "var(--app-font-heading)" }}>
               Operational Reach
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6" style={{ fontFamily: "var(--app-font-heading)" }}>
               Where We<br />Operate
             </h2>
-            <p className="text-white/50 text-base leading-relaxed max-w-md">
+            <p className="text-white/50 text-base leading-relaxed max-w-md font-light" style={{ fontFamily: "var(--app-font-sans)" }}>
               Headquartered in Mpumalanga — South Africa's coal and mining heartland.
               Positioned to deploy across the region with speed and precision.
             </p>

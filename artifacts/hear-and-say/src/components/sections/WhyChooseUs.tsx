@@ -47,17 +47,17 @@ export function WhyChooseUs() {
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 pb-10 border-b border-[#111111]/10">
           <div>
-            <p className="text-[9px] tracking-[0.45em] uppercase font-bold text-[#ffd200] mb-5">
+            <p className="text-[9px] tracking-[0.45em] uppercase font-bold text-[#ffd200] mb-5" style={{ fontFamily: "var(--app-font-heading)" }}>
               Our Capabilities
             </p>
             <h2
-              className="text-4xl md:text-5xl font-bold text-[#111111] leading-tight"
+              className="text-4xl md:text-5xl font-extrabold text-[#111111] leading-tight"
               style={{ fontFamily: "var(--app-font-heading)" }}
             >
               Why Lethuxolo<br />Trading.
             </h2>
           </div>
-          <p className="text-[#666666] text-sm leading-relaxed max-w-xs md:text-right">
+          <p className="text-[#666666] text-sm leading-relaxed max-w-xs md:text-right font-light" style={{ fontFamily: "var(--app-font-sans)" }}>
             Strategically positioned to deliver value through industry-relevant
             services, strong leadership, and operational discipline.
           </p>

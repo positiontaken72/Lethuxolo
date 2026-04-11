@@ -8,18 +8,18 @@ export function AboutIntro() {
 
           {/* Left: text block */}
           <div>
-            <p className="text-[9px] tracking-[0.45em] uppercase font-bold text-[#ffd200] mb-6">
+            <p className="text-[9px] tracking-[0.45em] uppercase font-bold text-[#ffd200] mb-6" style={{ fontFamily: "var(--app-font-heading)" }}>
               Who We Are
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-[52px] font-bold text-[#111111] leading-[1.08] mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-[52px] font-extrabold text-[#111111] leading-[1.08] mb-6" style={{ fontFamily: "var(--app-font-heading)" }}>
               How can we<br />help you?
             </h2>
-            <p className="text-[#555555] text-base md:text-[17px] leading-relaxed mb-4 max-w-lg">
+            <p className="text-[#555555] text-base md:text-[17px] leading-relaxed mb-4 max-w-lg font-light" style={{ fontFamily: "var(--app-font-sans)" }}>
               Lethuxolo Trading is a South African mining and industrial
               support services company, strategically headquartered in
               Mpumalanga — the country's coal and mining heartland.
             </p>
-            <p className="text-[#555555] text-base md:text-[17px] leading-relaxed mb-10 max-w-lg">
+            <p className="text-[#555555] text-base md:text-[17px] leading-relaxed mb-10 max-w-lg font-light" style={{ fontFamily: "var(--app-font-sans)" }}>
               We are more than a service provider. We are an operational
               partner — built to integrate into demanding environments and
               deliver without disruption.
