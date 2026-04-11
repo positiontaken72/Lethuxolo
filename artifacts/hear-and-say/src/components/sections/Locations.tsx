@@ -7,13 +7,6 @@ const metrics = [
   { value: "Level 1", label: "B-BBEE Certified", suffix: "" },
 ];
 
-const regions = [
-  { name: "Mpumalanga", role: "Primary base of operations", active: true },
-  { name: "Limpopo", role: "Expansion corridor", active: false },
-  { name: "Gauteng", role: "Logistics & procurement hub", active: false },
-  { name: "Northern Cape", role: "Extended service reach", active: false },
-];
-
 function CountUp({ target, duration = 1200 }: { target: string; duration?: number }) {
   const [display, setDisplay] = useState("0");
   const ref = useRef<HTMLSpanElement>(null);
@@ -58,58 +51,28 @@ export function Locations() {
   return (
     <section id="locations" className="bg-[#111111] text-white overflow-hidden">
 
-      {/* Top: Headline + region list */}
+      {/* Top: Headline */}
       <div className="container mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-
-          {/* Left: text block */}
-          <div>
-            <p className="text-[10px] tracking-[0.35em] uppercase text-[#ffd200] mb-5 font-bold" style={{ fontFamily: "var(--app-font-heading)" }}>
-              Operational Reach
-            </p>
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6" style={{ fontFamily: "var(--app-font-heading)" }}>
-              Where We<br />Operate
-            </h2>
-            <p className="text-white/50 text-base leading-relaxed max-w-md font-light" style={{ fontFamily: "var(--app-font-sans)" }}>
-              Headquartered in Mpumalanga — South Africa's coal and mining heartland.
-              Positioned to deploy across the region with speed and precision.
-            </p>
-          </div>
-
-          {/* Right: Structured region list — no icons */}
-          <div className="divide-y divide-white/8">
-            {regions.map((region, i) => (
-              <div
-                key={i}
-                className="py-5 flex items-center justify-between group"
-              >
-                <div className="flex items-center gap-4">
-                  <span
-                    className={`text-[10px] font-mono tracking-widest ${
-                      region.active ? "text-[#ffd200]" : "text-white/20"
-                    }`}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <p
-                      className={`font-bold text-base transition-colors duration-200 ${
-                        region.active ? "text-white" : "text-white/40"
-                      }`}
-                    >
-                      {region.name}
-                    </p>
-                    <p className="text-white/30 text-xs mt-0.5">{region.role}</p>
-                  </div>
-                </div>
-                {region.active && (
-                  <span className="text-[10px] bg-[#ffd200]/10 text-[#ffd200] border border-[#ffd200]/20 px-2.5 py-1 rounded-sm font-bold tracking-widest uppercase">
-                    Active
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
+        <div className="max-w-2xl">
+          <p
+            className="text-[10px] tracking-[0.35em] uppercase text-[#ffd200] mb-5 font-bold"
+            style={{ fontFamily: "var(--app-font-heading)" }}
+          >
+            Operational Reach
+          </p>
+          <h2
+            className="text-4xl md:text-5xl font-extrabold leading-tight mb-6"
+            style={{ fontFamily: "var(--app-font-heading)" }}
+          >
+            Where We<br />Operate
+          </h2>
+          <p
+            className="text-white/50 text-base leading-relaxed max-w-md font-light"
+            style={{ fontFamily: "var(--app-font-sans)" }}
+          >
+            Headquartered in Mpumalanga — South Africa's coal and mining heartland.
+            Positioned to deploy across the region with speed and precision.
+          </p>
         </div>
       </div>
 
@@ -126,10 +89,16 @@ export function Locations() {
                     : ""
                 } ${i > 0 ? "md:pl-10" : ""}`}
               >
-                <p className="text-[#ffd200] text-4xl md:text-5xl font-bold leading-none tracking-tight">
+                <p
+                  className="text-[#ffd200] text-4xl md:text-5xl font-bold leading-none tracking-tight"
+                  style={{ fontFamily: "var(--app-font-heading)" }}
+                >
                   <CountUp target={m.value} />
                 </p>
-                <p className="text-white/40 text-xs tracking-wide leading-relaxed uppercase font-medium">
+                <p
+                  className="text-white/40 text-xs tracking-wide leading-relaxed uppercase font-medium"
+                  style={{ fontFamily: "var(--app-font-sans)" }}
+                >
                   {m.label}
                 </p>
               </div>

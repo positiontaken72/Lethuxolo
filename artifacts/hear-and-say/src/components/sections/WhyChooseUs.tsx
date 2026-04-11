@@ -47,7 +47,10 @@ export function WhyChooseUs() {
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 pb-10 border-b border-[#111111]/10">
           <div>
-            <p className="text-[9px] tracking-[0.45em] uppercase font-bold text-[#ffd200] mb-5" style={{ fontFamily: "var(--app-font-heading)" }}>
+            <p
+              className="text-[9px] tracking-[0.45em] uppercase font-bold text-[#ffd200] mb-5"
+              style={{ fontFamily: "var(--app-font-heading)" }}
+            >
               Our Capabilities
             </p>
             <h2
@@ -57,37 +60,41 @@ export function WhyChooseUs() {
               Why Lethuxolo<br />Trading.
             </h2>
           </div>
-          <p className="text-[#666666] text-sm leading-relaxed max-w-xs md:text-right font-light" style={{ fontFamily: "var(--app-font-sans)" }}>
+          <p
+            className="text-[#666666] text-sm leading-relaxed max-w-xs md:text-right font-light"
+            style={{ fontFamily: "var(--app-font-sans)" }}
+          >
             Strategically positioned to deliver value through industry-relevant
             services, strong leadership, and operational discipline.
           </p>
         </div>
 
-        {/* Arcadis-style grid: NO icon boxes, thin top accent line, border dividers */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {/* Clean grid — horizontal dividers only, no broken vertical lines */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-[#111111]/10">
           {capabilities.map((cap, i) => (
             <div
               key={i}
-              className="border-b border-[#111111]/10 py-10 pr-0 md:pr-12 group"
-              style={{
-                borderRight: (i + 1) % 3 !== 0 ? "1px solid rgba(17,17,17,0.1)" : "none",
-              }}
+              className="border-b border-r border-[#111111]/10 py-10 px-8 group"
             >
-              {/* Yellow rule — Arcadis signature */}
+              {/* Yellow rule */}
               <div className="w-8 h-[3px] bg-[#ffd200] mb-6" />
 
               <h3
-                className="text-[1.1rem] font-bold text-[#111111] mb-3 leading-snug"
+                className="text-[1.05rem] font-bold text-[#111111] mb-3 leading-snug"
                 style={{ fontFamily: "var(--app-font-heading)" }}
               >
                 {cap.title}
               </h3>
-              <p className="text-[#666666] text-[13.5px] leading-relaxed mb-7">
+              <p
+                className="text-[#666666] text-[13.5px] leading-relaxed mb-7 font-light"
+                style={{ fontFamily: "var(--app-font-sans)" }}
+              >
                 {cap.description}
               </p>
               <a
                 href={cap.href}
                 className="inline-flex items-center gap-1.5 text-[#111111] text-[10px] font-bold tracking-[0.16em] uppercase hover:text-[#ffd200] transition-colors group/link"
+                style={{ fontFamily: "var(--app-font-heading)" }}
               >
                 Learn more
                 <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
