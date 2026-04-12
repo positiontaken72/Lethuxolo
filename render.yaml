@@ -2,7 +2,7 @@ services:
   - type: web
     name: lethuxolo-trading
     runtime: static
-    buildCommand: pnpm install && pnpm --filter @workspace/hear-and-say run build
+    buildCommand: npm install -g pnpm@10.26.1 && pnpm install --no-frozen-lockfile && pnpm --filter @workspace/hear-and-say run build
     staticPublishPath: artifacts/hear-and-say/dist/public
     routes:
       - type: rewrite
@@ -11,3 +11,5 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NODE_VERSION
+        value: "22"
