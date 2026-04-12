@@ -1,5 +1,4 @@
 {
-  "nodeVersion": "22.x",
   "installCommand": "pnpm install --no-frozen-lockfile",
   "buildCommand": "pnpm --filter @workspace/hear-and-say run build",
   "outputDirectory": "artifacts/hear-and-say/dist/public",
