@@ -11,7 +11,7 @@ const slides = [
     href: "#services",
   },
   {
-    image: "/images/service-bulk-transport-new.png",
+    image: "/images/service-bulk-transport-lt.webp",
     label: "Logistics",
     title: "Bulk Transportation\nAcross South Africa.",
     sub: "Coal · Manganese · Steel",
@@ -19,7 +19,7 @@ const slides = [
     href: "#bulk-transport",
   },
   {
-    image: "/images/service-yellow-plant.png",
+    image: "/images/service-yellow-plant-lt.jpg",
     label: "Equipment",
     title: "Yellow Plant\nMachinery Operations.",
     sub: "Excavators · Loaders · Dump Trucks",
@@ -27,7 +27,7 @@ const slides = [
     href: "#yellow-plant",
   },
   {
-    image: "/images/service-road-maintenance-new.jpg",
+    image: "/images/service-road-maintenance-lt.jpg",
     label: "Infrastructure",
     title: "Road Maintenance\n& Rehabilitation.",
     sub: "Mining Access Routes · Compliance",
@@ -35,7 +35,7 @@ const slides = [
     href: "#road-maintenance",
   },
   {
-    image: "/images/service-industrial-cleaning-new.jpeg",
+    image: "/images/service-industrial-cleaning-lt.webp",
     label: "Operations",
     title: "Industrial Cleaning\nAt Scale.",
     sub: "Safety-First · Protocol-Driven",

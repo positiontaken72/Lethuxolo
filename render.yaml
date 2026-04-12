@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: lethuxolo-trading
+    runtime: static
+    buildCommand: pnpm install && pnpm --filter @workspace/hear-and-say run build
+    staticPublishPath: artifacts/hear-and-say/dist/public
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: NODE_ENV
+        value: production

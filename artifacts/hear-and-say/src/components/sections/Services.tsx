@@ -7,7 +7,7 @@ const services = [
     category: "Logistics",
     description:
       "Reliable movement of coal, manganese, and steel across supply chains. Full fleet readiness with real-time coordination — keeping operations running without interruption.",
-    image: "/images/service-bulk-transport.png",
+    image: "/images/service-bulk-transport-lt.webp",
     id: "bulk-transport",
   },
   {
@@ -15,7 +15,7 @@ const services = [
     category: "Equipment",
     description:
       "Provision and operation of excavators, loaders, and dump trucks. Performance and uptime are non-negotiable — rapid mobilization for any scale of operation.",
-    image: "/images/service-yellow-plant.png",
+    image: "/images/service-yellow-plant-lt.jpg",
     id: "yellow-plant",
   },
   {
@@ -23,7 +23,7 @@ const services = [
     category: "Infrastructure",
     description:
       "Grading, resurfacing, and rehabilitation of mining roads. We keep access routes operational, safe, and compliant under the most demanding conditions.",
-    image: "/images/service-road-maintenance.png",
+    image: "/images/service-road-maintenance-lt.jpg",
     id: "road-maintenance",
   },
   {
@@ -31,7 +31,7 @@ const services = [
     category: "Operations",
     description:
       "Large-scale cleaning services built around compliance and safety. Executed with full protocol adherence across industrial and mining environments.",
-    image: "/images/service-industrial-cleaning.png",
+    image: "/images/service-industrial-cleaning-lt.webp",
     id: "industrial-cleaning",
   },
   {
@@ -39,7 +39,7 @@ const services = [
     category: "Procurement",
     description:
       "End-to-end procurement and delivery of materials and equipment. Eliminating supply delays and keeping active operations fully resourced.",
-    image: "/images/service-supply-goods.png",
+    image: "/images/service-supply-goods-lt.jpeg",
     id: "supply-goods",
   },
   {
