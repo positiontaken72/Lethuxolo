@@ -58,21 +58,21 @@ export function Navbar() {
               <img
                 src="/lethuxolo-logo.png"
                 alt="Lethuxolo Trading"
-                className="h-full w-full object-cover scale-125"
+                className="h-full w-full object-contain p-1 md:p-1.5"
               />
             </div>
 
             <div className="flex flex-col justify-center leading-none">
-              {/* Company name: slightly smaller on mobile */}
+              {/* Company name: smaller on mobile */}
               <span
-                className="text-[#111111] font-extrabold text-[16px] md:text-[20px] leading-tight whitespace-nowrap"
+                className="text-[#111111] font-extrabold text-[14px] md:text-[20px] leading-tight whitespace-nowrap"
                 style={{ fontFamily: "var(--app-font-heading)", letterSpacing: "0.01em" }}
               >
                 Lethuxolo Trading
               </span>
-              {/* Slogan: hidden on mobile, visible on desktop */}
+              {/* Slogan: visible on both, smaller tracking on mobile */}
               <span
-                className="hidden md:block text-[#ffd200] text-[9.5px] tracking-[0.32em] uppercase font-semibold mt-[4px] whitespace-nowrap"
+                className="text-[#ffd200] text-[7.5px] md:text-[9.5px] tracking-[0.22em] md:tracking-[0.32em] uppercase font-semibold mt-[3px] md:mt-[4px] whitespace-nowrap"
                 style={{ fontFamily: "var(--app-font-heading)" }}
               >
                 Inspired by the Impossible
@@ -163,23 +163,14 @@ export function Navbar() {
             </div>
           </nav>
 
-          {/* ── Mobile: Get Quote pill + hamburger ── */}
-          <div className="lg:hidden flex items-center gap-3">
-            <a
-              href="#contact"
-              className="bg-[#ffd200] text-[#111111] px-4 py-2 text-[10px] font-bold tracking-[0.14em] uppercase whitespace-nowrap"
-              style={{ fontFamily: "var(--app-font-heading)" }}
-            >
-              Get Quote
-            </a>
-            <button
-              className="text-[#444444] hover:text-[#111111] p-1 transition-colors"
-              onClick={() => setMobileOpen(true)}
-              aria-label="Open menu"
-            >
-              <Menu className="w-5 h-5" />
-            </button>
-          </div>
+          {/* ── Mobile: hamburger only ── */}
+          <button
+            className="lg:hidden text-[#444444] hover:text-[#111111] p-1 transition-colors"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
         </div>
       </header>
 
@@ -195,11 +186,11 @@ export function Navbar() {
             {/* Drawer header */}
             <div className="flex items-center justify-between px-5 h-[60px] border-b border-[#eeeeee]">
               <div className="flex items-center gap-2.5">
-                <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0">
+                <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0 ring-1 ring-[#ffd200]/30">
                   <img
                     src="/lethuxolo-logo.png"
                     alt="Lethuxolo"
-                    className="h-full w-full object-cover scale-125"
+                    className="h-full w-full object-contain p-0.5"
                   />
                 </div>
                 <div className="flex flex-col leading-none">
