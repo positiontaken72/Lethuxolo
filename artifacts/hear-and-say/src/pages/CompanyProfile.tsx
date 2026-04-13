@@ -278,12 +278,11 @@ function TocPage() {
   const items = [
     { num: "01", title: "Executive Summary", page: "03" },
     { num: "02", title: "Mission, Vision & Values", page: "04" },
-    { num: "03", title: "Our Core Services Part I", page: "05" },
-    { num: "04", title: "Our Core Services Part II", page: "06" },
-    { num: "05", title: "Why Choose Lethuxolo Trading", page: "07" },
-    { num: "06", title: "Compliance & B-BBEE Certification", page: "07" },
-    { num: "07", title: "Our Capabilities & Advantages", page: "07" },
-    { num: "08", title: "Contact & Get In Touch", page: "08" },
+    { num: "03", title: "Our Core Services", page: "05" },
+    { num: "04", title: "Why Choose Lethuxolo Trading", page: "06" },
+    { num: "05", title: "Compliance & B-BBEE Certification", page: "06" },
+    { num: "06", title: "Our Capabilities & Advantages", page: "06" },
+    { num: "07", title: "Contact & Get In Touch", page: "07" },
   ];
 
   return (
@@ -724,19 +723,18 @@ function ServiceCard({
 }
 
 /* ═══════════════════════════════════════════════════
-   PAGE 5 – SERVICES PART 1
+   PAGE 5 – ALL SERVICES (single page)
 ═══════════════════════════════════════════════════ */
-function ServicesPage1() {
+function ServicesPage() {
   const services = [
     {
       icon: Truck,
       category: "Logistics",
       title: "Bulk Transportation",
       image: "/images/service-bulk-transport-lt.webp",
-      desc: "Reliable movement of coal, manganese, and steel across supply chains. Full fleet readiness with real-time coordination, ensuring operations run without interruption regardless of volume or distance.",
+      desc: "Reliable movement of coal, manganese, and steel. Our fleet stays ready and we coordinate closely to keep operations running without delays.",
       features: [
         "Coal, manganese & steel haulage",
-        "Real-time fleet coordination",
         "Long and short haul capability",
         "Compliance with road regulations",
       ],
@@ -746,11 +744,10 @@ function ServicesPage1() {
       category: "Equipment",
       title: "Yellow Plant Machinery",
       image: "/images/service-yellow-plant-lt.jpg",
-      desc: "Provision and operation of excavators, loaders, and dump trucks. Performance and uptime are non-negotiable rapid mobilisation for any scale of operation, delivered with full operator support.",
+      desc: "Excavators, loaders, and dump trucks supplied with experienced operators. We mobilise quickly and keep equipment running with on-site maintenance support.",
       features: [
         "Excavators, loaders & dump trucks",
         "Experienced plant operators",
-        "Rapid site mobilisation",
         "Preventive maintenance included",
       ],
     },
@@ -759,67 +756,21 @@ function ServicesPage1() {
       category: "Infrastructure",
       title: "Road Maintenance",
       image: "/images/service-road-maintenance-lt.jpg",
-      desc: "Grading, resurfacing, and rehabilitation of mining access roads. We keep routes operational, safe, and compliant under the most demanding conditions and heavy vehicle loads.",
+      desc: "Grading, resurfacing, and rehabilitation of mining access roads. We keep routes safe and compliant under heavy vehicle loads and tough conditions.",
       features: [
         "Grading & resurfacing",
         "Access road rehabilitation",
-        "Compliance with mine standards",
         "Emergency road response",
       ],
     },
-  ];
-
-  return (
-    <div className="cp-page" style={{ background: LG, padding: "56px 60px 0", display: "flex", flexDirection: "column" }}>
-      <SectionLabel num="03" title="Our Core Services" />
-
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 28 }}>
-        <h2 style={{ ...hdg, fontSize: 36, fontWeight: 900, color: D }}>
-          What We Deliver Part I
-        </h2>
-        <div style={{ ...sans, fontSize: 10, color: G, letterSpacing: "0.1em" }}>
-          Showing 3 of 6 services
-        </div>
-      </div>
-
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18, flex: 1 }}>
-        {services.map((s, i) => <ServiceCard key={i} service={s} />)}
-      </div>
-
-      {/* Bottom bar */}
-      <div
-        style={{
-          marginTop: 28,
-          background: D,
-          padding: "14px 24px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <span style={{ ...sans, fontSize: 10, color: "rgba(255,255,255,0.4)" }}>
-          Lethuxolo Trading Company Profile 2025
-        </span>
-        <span style={{ ...hdg, fontSize: 11, color: Y }}>Continued overleaf →</span>
-      </div>
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════════
-   PAGE 6 – SERVICES PART 2
-═══════════════════════════════════════════════════ */
-function ServicesPage2() {
-  const services = [
     {
       icon: Wind,
       category: "Operations",
       title: "Industrial Cleaning",
       image: "/images/service-industrial-cleaning-lt.webp",
-      desc: "Large-scale cleaning services built around compliance and safety. Executed with full protocol adherence across industrial and mining environments, from equipment cleaning to full site decontamination.",
+      desc: "Large-scale cleaning services carried out with full safety protocol adherence across mining and industrial environments, including hazardous areas.",
       features: [
         "Full site & equipment cleaning",
-        "Safety protocol driven",
         "Hazardous area compliant",
         "Industrial waste management",
       ],
@@ -829,12 +780,11 @@ function ServicesPage2() {
       category: "Procurement",
       title: "Supply of Goods",
       image: "/images/service-supply-goods-lt.jpeg",
-      desc: "End-to-end procurement and delivery of materials, consumables, and equipment to active operations. Eliminating supply delays and keeping mining operations fully resourced at all times.",
+      desc: "Procurement and delivery of materials, consumables, and equipment to active operations. We remove supply delays and keep sites properly resourced.",
       features: [
         "Materials & consumables supply",
         "Equipment procurement",
         "Reliable delivery scheduling",
-        "Vendor relationship management",
       ],
     },
     {
@@ -842,51 +792,105 @@ function ServicesPage2() {
       category: "Site Services",
       title: "Lighting Solutions",
       image: "/images/service-lighting.png",
-      desc: "Portable and fixed lighting plants deployed for night operations, low-visibility sites, and emergency scenarios. Rapid setup, industrial-grade reliability, and full compliance with mine safety standards.",
+      desc: "Portable and fixed lighting plants for night operations and low-visibility sites. Fast to set up, built to industrial standard, and fully compliant.",
       features: [
         "Portable lighting plant hire",
         "Night operation support",
-        "Industrial-grade equipment",
         "Rapid deployment & setup",
       ],
     },
   ];
 
   return (
-    <div className="cp-page" style={{ background: LG, padding: "56px 60px 0", display: "flex", flexDirection: "column" }}>
-      <SectionLabel num="04" title="Our Core Services Continued" />
+    <div className="cp-page" style={{ background: LG, padding: "44px 60px 0", display: "flex", flexDirection: "column" }}>
+      <SectionLabel num="03" title="Our Core Services" />
 
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 28 }}>
-        <h2 style={{ ...hdg, fontSize: 36, fontWeight: 900, color: D }}>
-          What We Deliver Part II
-        </h2>
-        <div style={{ ...sans, fontSize: 10, color: G, letterSpacing: "0.1em" }}>
-          Showing 4 to 6 of 6 services
-        </div>
+      <h2 style={{ ...hdg, fontSize: 32, fontWeight: 900, color: D, marginBottom: 20 }}>
+        What We Deliver
+      </h2>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "repeat(2, 1fr)", gap: 14, flex: 1 }}>
+        {services.map((s, i) => (
+          <div
+            key={i}
+            style={{
+              background: "white",
+              border: "1px solid #e8e8e8",
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
+            }}
+          >
+            {/* Image strip */}
+            <div style={{ height: 100, position: "relative", overflow: "hidden", flexShrink: 0 }}>
+              <img
+                src={s.image}
+                alt={s.title}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%)" }} />
+              <div
+                style={{
+                  position: "absolute",
+                  top: 10,
+                  left: 10,
+                  background: Y,
+                  color: D,
+                  padding: "2px 8px",
+                  ...hdg,
+                  fontSize: 7.5,
+                  fontWeight: 700,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                }}
+              >
+                {s.category}
+              </div>
+            </div>
+
+            {/* Content */}
+            <div style={{ padding: "14px 16px", flex: 1, display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                <s.icon size={14} color={Y} />
+                <h3 style={{ ...hdg, fontSize: 14, fontWeight: 800, color: D, lineHeight: 1.1 }}>
+                  {s.title}
+                </h3>
+              </div>
+              <div style={{ width: 24, height: 2, background: Y, marginBottom: 8 }} />
+              <p style={{ ...sans, fontSize: 10.5, color: G, lineHeight: 1.65, marginBottom: 10, fontWeight: 300, flex: 1 }}>
+                {s.desc}
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+                {s.features.map((f, fi) => (
+                  <div key={fi} style={{ display: "flex", alignItems: "center", gap: 7 }}>
+                    <ChevronRight size={9} color={Y} />
+                    <span style={{ ...sans, fontSize: 9.5, color: D, fontWeight: 500 }}>{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18, flex: 1 }}>
-        {services.map((s, i) => <ServiceCard key={i} service={s} />)}
-      </div>
-
-      {/* Services summary strip */}
+      {/* Summary strip */}
       <div
         style={{
-          marginTop: 28,
+          marginTop: 16,
           background: Y,
-          padding: "16px 24px",
+          padding: "13px 24px",
           display: "flex",
           alignItems: "center",
           gap: 20,
         }}
       >
-        <Layers size={20} color={D} />
-        <span style={{ ...hdg, fontSize: 13, fontWeight: 800, color: D }}>
-          6 Specialised Service Lines
+        <Layers size={18} color={D} />
+        <span style={{ ...hdg, fontSize: 12, fontWeight: 800, color: D }}>
+          6 Service Lines
         </span>
-        <div style={{ width: 1, height: 20, background: "rgba(0,0,0,0.15)" }} />
-        <span style={{ ...sans, fontSize: 11, color: "#4a3800" }}>
-          Built specifically for the demands of mining and heavy industry across South Africa
+        <div style={{ width: 1, height: 18, background: "rgba(0,0,0,0.15)" }} />
+        <span style={{ ...sans, fontSize: 10.5, color: "#4a3800" }}>
+          Built for the demands of mining and heavy industry across South Africa
         </span>
       </div>
     </div>
@@ -908,7 +912,7 @@ function WhyChoosePage() {
 
   return (
     <div className="cp-page" style={{ background: "white", padding: "56px 60px 48px", display: "flex", flexDirection: "column" }}>
-      <SectionLabel num="05" title="Why Choose Lethuxolo Trading" />
+      <SectionLabel num="04" title="Why Choose Lethuxolo Trading" />
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 280px", gap: 40, flex: 1 }}>
         {/* Left: capabilities */}
@@ -1271,7 +1275,7 @@ export default function CompanyProfile() {
               Lethuxolo Trading - Company Profile 2025
             </div>
             <div style={{ fontFamily: "'Montserrat',sans-serif", fontSize: 10, color: "rgba(255,255,255,0.45)", marginTop: 2 }}>
-              8 pages · Mining & Industrial Support Services
+              7 pages · Mining & Industrial Support Services
             </div>
           </div>
         </div>
@@ -1302,8 +1306,7 @@ export default function CompanyProfile() {
         <TocPage />
         <ExecutiveSummaryPage />
         <MissionPage />
-        <ServicesPage1 />
-        <ServicesPage2 />
+        <ServicesPage />
         <WhyChoosePage />
         <ContactPage />
       </div>
