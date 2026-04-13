@@ -23,10 +23,10 @@ export function CtaBanner() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
-                href="#"
+                href="/company-profile"
                 className="inline-flex items-center justify-center gap-2 bg-[#ffd200] text-[#111111] px-6 py-4 text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-white transition-colors"
               >
-                Download Company Profile
+                View Company Profile
                 <Download className="w-4 h-4 flex-shrink-0" />
               </a>
               <a

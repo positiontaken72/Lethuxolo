@@ -170,7 +170,7 @@ export function Hero() {
 
           {/* CTA */}
           <a
-            href="#contact"
+            href="/company-profile"
             className="inline-flex items-center gap-2.5 bg-[#ffd200] hover:bg-[#e6c400] text-[#111111] px-5 py-3 text-[11px] font-bold tracking-[0.1em] uppercase transition-colors group"
             style={{ fontFamily: "var(--app-font-heading)" }}
           >
