@@ -48,26 +48,31 @@ export function Navbar() {
           transition: "box-shadow 0.2s",
         }}
       >
-        <div className="px-6 md:px-10 h-[88px] flex items-center justify-between gap-8">
+        {/* Mobile height: 60px · Desktop height: 88px */}
+        <div className="px-5 md:px-10 h-[60px] md:h-[88px] flex items-center justify-between">
 
           {/* ── Logo block ── */}
-          <a href="/" className="flex items-center gap-4 shrink-0 group">
-            <div className="h-[64px] w-[64px] rounded-full ring-2 ring-[#ffd200]/30 group-hover:ring-[#ffd200]/70 transition-all overflow-hidden flex-shrink-0 bg-white">
+          <a href="/" className="flex items-center gap-3 md:gap-4 shrink-0 group">
+            {/* Logo circle: 44px mobile, 64px desktop */}
+            <div className="h-[44px] w-[44px] md:h-[64px] md:w-[64px] rounded-full ring-2 ring-[#ffd200]/30 group-hover:ring-[#ffd200]/70 transition-all overflow-hidden flex-shrink-0 bg-white">
               <img
                 src="/lethuxolo-logo.png"
                 alt="Lethuxolo Trading"
                 className="h-full w-full object-cover scale-125"
               />
             </div>
+
             <div className="flex flex-col justify-center leading-none">
+              {/* Company name: slightly smaller on mobile */}
               <span
-                className="text-[#111111] font-extrabold text-[20px] leading-tight whitespace-nowrap"
+                className="text-[#111111] font-extrabold text-[16px] md:text-[20px] leading-tight whitespace-nowrap"
                 style={{ fontFamily: "var(--app-font-heading)", letterSpacing: "0.01em" }}
               >
                 Lethuxolo Trading
               </span>
+              {/* Slogan: hidden on mobile, visible on desktop */}
               <span
-                className="text-[#ffd200] text-[9.5px] tracking-[0.32em] uppercase font-semibold mt-[4px] whitespace-nowrap"
+                className="hidden md:block text-[#ffd200] text-[9.5px] tracking-[0.32em] uppercase font-semibold mt-[4px] whitespace-nowrap"
                 style={{ fontFamily: "var(--app-font-heading)" }}
               >
                 Inspired by the Impossible
@@ -88,7 +93,7 @@ export function Navbar() {
               </a>
             ))}
 
-            {/* Services — custom hover panel */}
+            {/* Services dropdown */}
             <div
               ref={dropdownRef}
               className="relative"
@@ -107,14 +112,12 @@ export function Navbar() {
                 />
               </button>
 
-              {/* Dropdown panel */}
               {servicesOpen && (
                 <div
                   className="absolute right-0 top-full mt-0 w-[420px] bg-[#111111] shadow-2xl z-50"
                   onMouseEnter={openDropdown}
                   onMouseLeave={closeDropdown}
                 >
-                  {/* Yellow top accent */}
                   <div className="h-[3px] bg-[#ffd200]" />
                   <div className="p-2">
                     {serviceLinks.map((s) => (
@@ -160,77 +163,96 @@ export function Navbar() {
             </div>
           </nav>
 
-          {/* ── Mobile hamburger ── */}
-          <button
-            className="lg:hidden text-[#444444] hover:text-[#111111] p-1 ml-auto transition-colors"
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          {/* ── Mobile: Get Quote pill + hamburger ── */}
+          <div className="lg:hidden flex items-center gap-3">
+            <a
+              href="#contact"
+              className="bg-[#ffd200] text-[#111111] px-4 py-2 text-[10px] font-bold tracking-[0.14em] uppercase whitespace-nowrap"
+              style={{ fontFamily: "var(--app-font-heading)" }}
+            >
+              Get Quote
+            </a>
+            <button
+              className="text-[#444444] hover:text-[#111111] p-1 transition-colors"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* ── Mobile overlay ── */}
+      {/* ── Mobile slide-in drawer ── */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[100] flex">
           <div
             className="flex-1 bg-black/30 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}
           />
-          <div className="w-[300px] bg-white h-full flex flex-col border-l border-[#e0e0e0] shadow-2xl">
-            {/* Header */}
-            <div className="flex items-center justify-between px-6 h-[88px] border-b border-[#e8e8e8]">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full overflow-hidden flex-shrink-0 bg-white">
+          <div className="w-[280px] bg-white h-full flex flex-col border-l border-[#e0e0e0] shadow-2xl">
+
+            {/* Drawer header */}
+            <div className="flex items-center justify-between px-5 h-[60px] border-b border-[#eeeeee]">
+              <div className="flex items-center gap-2.5">
+                <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0">
                   <img
                     src="/lethuxolo-logo.png"
                     alt="Lethuxolo"
                     className="h-full w-full object-cover scale-125"
                   />
                 </div>
-                <span
-                  className="text-[#111111] font-extrabold text-[15px] tracking-tight"
-                  style={{ fontFamily: "var(--app-font-heading)" }}
-                >
-                  Lethuxolo Trading
-                </span>
+                <div className="flex flex-col leading-none">
+                  <span
+                    className="text-[#111111] font-extrabold text-[14px]"
+                    style={{ fontFamily: "var(--app-font-heading)" }}
+                  >
+                    Lethuxolo Trading
+                  </span>
+                  <span
+                    className="text-[#ffd200] text-[8px] tracking-[0.22em] uppercase font-semibold mt-0.5"
+                    style={{ fontFamily: "var(--app-font-heading)" }}
+                  >
+                    Inspired by the Impossible
+                  </span>
+                </div>
               </div>
               <button
                 onClick={() => setMobileOpen(false)}
-                className="text-[#888888] hover:text-[#111111] transition-colors"
+                className="text-[#aaaaaa] hover:text-[#111111] transition-colors p-1"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Links */}
-            <nav className="flex flex-col px-6 py-5 flex-1 overflow-y-auto">
+            {/* Nav links */}
+            <nav className="flex flex-col px-5 py-4 flex-1 overflow-y-auto">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="py-4 text-[14px] font-medium text-[#333333] hover:text-[#111111] border-b border-[#f0f0f0] transition-colors"
+                  className="py-3.5 text-[13.5px] font-medium text-[#333333] hover:text-[#111111] border-b border-[#f0f0f0] transition-colors"
                   style={{ fontFamily: "var(--app-font-sans)" }}
                 >
                   {link.label}
                 </a>
               ))}
+
               <div className="py-4 border-b border-[#f0f0f0]">
                 <p
-                  className="text-[10px] text-[#ffd200] tracking-[0.3em] uppercase mb-3 font-bold"
+                  className="text-[9px] text-[#ffd200] tracking-[0.28em] uppercase mb-3 font-bold"
                   style={{ fontFamily: "var(--app-font-heading)" }}
                 >
                   Services
                 </p>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-0.5">
                   {serviceLinks.map((s) => (
                     <a
                       key={s.label}
                       href={s.href}
                       onClick={() => setMobileOpen(false)}
-                      className="py-2.5 px-2 text-[13.5px] font-medium text-[#555555] hover:text-[#111111] hover:bg-[#f8f8f8] transition-colors"
+                      className="py-2.5 px-2 text-[13px] font-medium text-[#555555] hover:text-[#111111] hover:bg-[#f8f8f8] transition-colors"
                       style={{ fontFamily: "var(--app-font-sans)" }}
                     >
                       {s.label}
@@ -239,18 +261,17 @@ export function Navbar() {
                 </div>
               </div>
 
-              {/* Social links in mobile menu */}
-              <div className="py-5 flex gap-4">
-                <a href="#" className="text-[#888888] hover:text-[#111111] transition-colors" aria-label="LinkedIn">
+              <div className="py-4 flex gap-4">
+                <a href="#" className="text-[#aaaaaa] hover:text-[#111111] transition-colors" aria-label="LinkedIn">
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a href="mailto:info@lethuxolotrading.co.za" className="text-[#888888] hover:text-[#111111] transition-colors" aria-label="Email">
+                <a href="mailto:info@lethuxolotrading.co.za" className="text-[#aaaaaa] hover:text-[#111111] transition-colors" aria-label="Email">
                   <Mail className="w-4 h-4" />
                 </a>
               </div>
             </nav>
 
-            <div className="px-6 pb-8 pt-4">
+            <div className="px-5 pb-8 pt-3">
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
