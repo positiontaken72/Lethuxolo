@@ -26,9 +26,9 @@ const capabilities = [
     href: "#services",
   },
   {
-    title: "Operational Efficiency",
+    title: "Efficient Execution",
     description:
-      "Optimized processes and streamlined execution, delivering cost and time effectiveness on every project.",
+      "We keep our processes lean and our teams focused. Every project runs on schedule and within budget.",
     href: "#services",
   },
   {
@@ -64,8 +64,8 @@ export function WhyChooseUs() {
             className="text-[#666666] text-sm leading-relaxed max-w-xs md:text-right font-light"
             style={{ fontFamily: "var(--app-font-sans)" }}
           >
-            Strategically positioned to deliver value through industry-relevant
-            services, strong leadership, and operational discipline.
+            Grounded in the mining and industrial sector, with the experience,
+            leadership, and structure to back it up.
           </p>
         </div>
 

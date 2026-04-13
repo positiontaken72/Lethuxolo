@@ -401,31 +401,30 @@ function ExecutiveSummaryPage() {
         <div>
           <p style={{ ...sans, fontSize: 14, color: G, lineHeight: 1.8, marginBottom: 18, fontWeight: 300 }}>
             Lethuxolo Trading is a proudly South African mining and industrial support
-            services company, strategically headquartered in Mpumalanga the country's
-            coal and mining heartland. Founded in 2022, the company was established with a
-            clear mandate: to fill the operational gaps that large mining operations face when
-            managing logistics, equipment, maintenance, and site services.
+            services company headquartered in Mpumalanga, the country's coal and mining
+            heartland. Founded in 2022, the company was built to fill a clear gap: large
+            mining operations need reliable hands-on support across logistics, equipment,
+            maintenance, and site services, and that is exactly what we provide.
           </p>
           <p style={{ ...sans, fontSize: 14, color: G, lineHeight: 1.8, marginBottom: 18, fontWeight: 300 }}>
-            We are more than a service provider. We are an operational partner built to
-            integrate into demanding environments and deliver without disruption. Our team
-            operates with a safety-first philosophy, combining industry experience with
-            agility to meet the ever-evolving needs of the mining and industrial sectors.
+            We are more than a service provider. We work closely with clients, get to know
+            their sites, and show up when it matters. Our team carries real industry experience
+            and keeps safety at the front of everything, from the first briefing to the
+            final sign-off.
           </p>
           <p style={{ ...sans, fontSize: 14, color: G, lineHeight: 1.8, marginBottom: 32, fontWeight: 300 }}>
-            As a Level 1 B-BBEE certified company, Lethuxolo Trading is committed to
-            supporting transformation, creating local employment, and growing economic
-            participation across Mpumalanga and surrounding communities. We are positioned
-            to scale deploying quickly, operating reliably, and delivering to specification
-            on every project we undertake.
+            Lethuxolo Trading holds a Level 1 B-BBEE certification and takes local job
+            creation seriously. Most of our workforce comes from communities in and around
+            Mpumalanga. We mobilise quickly, work to the required standard, and see every
+            project through to completion.
           </p>
 
           {/* Key points */}
           {[
-            "Full-spectrum mining support from logistics to site services",
-            "Rapid mobilisation and deployment across South African operations",
-            "Level 1 B-BBEE contributor driving local economic growth",
-            "Safety, compliance, and operational discipline at every stage",
+            "Mining support covering logistics, equipment, maintenance, and site services",
+            "Fast to mobilise and on-site quickly across South Africa",
+            "Level 1 B-BBEE rated with a strong focus on local employment",
+            "Safety and compliance taken seriously at every stage of every job",
           ].map((point, i) => (
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 12 }}>
               <CheckCircle size={15} color={Y} style={{ marginTop: 2, flexShrink: 0 }} />
@@ -435,8 +434,8 @@ function ExecutiveSummaryPage() {
         </div>
 
         {/* Right: image + badge */}
-        <div style={{ position: "relative" }}>
-          <div style={{ position: "relative", overflow: "hidden", height: 340 }}>
+        <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
+          <div style={{ position: "relative", overflow: "hidden", flex: 1, minHeight: 220 }}>
             <img
               src="/images/hero-open-pit.jpeg"
               alt="Lethuxolo Operations"
@@ -458,6 +457,7 @@ function ExecutiveSummaryPage() {
               display: "flex",
               alignItems: "center",
               gap: 12,
+              flexShrink: 0,
             }}
           >
             <Award size={24} color={D} />
@@ -468,9 +468,9 @@ function ExecutiveSummaryPage() {
               </div>
             </div>
           </div>
-          <div style={{ background: D, padding: "14px 20px" }}>
+          <div style={{ background: D, padding: "14px 20px", flexShrink: 0 }}>
             <p style={{ ...sans, fontSize: 11, color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>
-              Headquartered in Mpumalanga South Africa's mining and coal heartland.
+              Headquartered in Mpumalanga, South Africa's coal and mining heartland.
             </p>
           </div>
         </div>
@@ -531,7 +531,7 @@ function MissionPage() {
       icon: Eye,
       label: "Vision",
       heading: "Our Vision",
-      body: "To become the most trusted and preferred mining support services partner in South Africa recognised for operational excellence, transformation, and community impact.",
+      body: "To be the go-to mining support partner in South Africa, known for doing the work right, empowering local communities, and earning long-term trust from every client we serve.",
       dark: true,
     },
     {
@@ -861,7 +861,7 @@ function ServicesPage2() {
           What We Deliver Part II
         </h2>
         <div style={{ ...sans, fontSize: 10, color: G, letterSpacing: "0.1em" }}>
-          Showing 4–6 of 6 services
+          Showing 4 to 6 of 6 services
         </div>
       </div>
 
@@ -898,12 +898,12 @@ function ServicesPage2() {
 ═══════════════════════════════════════════════════ */
 function WhyChoosePage() {
   const capabilities = [
-    { icon: Shield, title: "Safety First", desc: "Strict adherence to safety and compliance standards. Personnel and assets protected at every stage." },
-    { icon: Clock, title: "Reliability", desc: "Consistent performance in demanding environments uninterrupted, on-schedule delivery." },
-    { icon: BarChart2, title: "Industry Aligned", desc: "Built specifically for mining not adapted from general-purpose providers." },
-    { icon: TrendingUp, title: "Scalable Operations", desc: "Flexible support from single-site to multi-operation engagements of any scale." },
-    { icon: Zap, title: "Operational Efficiency", desc: "Streamlined execution delivering cost-effectiveness and time savings on every project." },
-    { icon: Users, title: "Community Driven", desc: "Supporting local economic growth across Mpumalanga through employment and skills." },
+    { icon: Shield, title: "Safety First", desc: "Strict adherence to safety and compliance standards. People and equipment are protected at every stage of every job." },
+    { icon: Clock, title: "Reliability", desc: "Clients know what to expect from us and we deliver on it. Consistent output in tough conditions, on schedule." },
+    { icon: BarChart2, title: "Industry Aligned", desc: "Built specifically for mining, not converted from a general-purpose service company. We know the environment." },
+    { icon: TrendingUp, title: "Scalable Operations", desc: "Flexible support for projects of any size, from a single site to multi-operation engagements across regions." },
+    { icon: Zap, title: "Efficient Execution", desc: "We keep things focused and avoid unnecessary complexity. Every project runs on time and stays within budget." },
+    { icon: Users, title: "Community Driven", desc: "Supporting local economic growth across Mpumalanga through real employment and skills development." },
   ];
 
   return (
@@ -1077,8 +1077,9 @@ function ContactPage() {
         </h2>
 
         <p style={{ ...sans, fontSize: 14, color: "rgba(255,255,255,0.5)", maxWidth: 440, lineHeight: 1.8, fontWeight: 300, marginBottom: 52 }}>
-          Whether you need operational support, a reliable logistics partner, or specialised
-          industrial services Lethuxolo Trading mobilises fast and delivers to specification.
+          Whether you need transport, equipment, site services, or just a team that shows
+          up and gets the job done, Lethuxolo Trading moves quickly and delivers to the
+          required standard every time.
         </p>
 
         {/* Contact cards */}

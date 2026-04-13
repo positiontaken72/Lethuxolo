@@ -38,7 +38,7 @@ const slides = [
     image: "/images/service-industrial-cleaning-lt.webp",
     label: "Operations",
     title: "Industrial Cleaning\nAt Scale.",
-    sub: "Safety-First · Protocol-Driven",
+    sub: "Safety Focused · Fully Compliant",
     cta: "Industrial cleaning",
     href: "#industrial-cleaning",
   },

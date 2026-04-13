@@ -18,8 +18,8 @@ export function CtaBanner() {
               Ready to get<br />started?
             </h2>
             <p className="text-white/50 text-[15px] leading-relaxed mb-8 md:mb-10 max-w-sm">
-              Whether you need operational support, a reliable logistics partner,
-              or industrial services. We mobilize fast and deliver to spec.
+              Whether you need transport, site services, or a dependable logistics
+              partner, we move quickly and get the job done right.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
