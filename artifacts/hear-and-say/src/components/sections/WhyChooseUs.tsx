@@ -16,7 +16,7 @@ const capabilities = [
   {
     title: "Industry Aligned",
     description:
-      "Built specifically for mining and heavy industry — not adapted from general-purpose service providers.",
+      "Built specifically for mining and heavy industry, not adapted from general-purpose service providers.",
     href: "#services",
   },
   {
@@ -28,7 +28,7 @@ const capabilities = [
   {
     title: "Operational Efficiency",
     description:
-      "Optimized processes and streamlined execution — delivering cost and time effectiveness on every project.",
+      "Optimized processes and streamlined execution, delivering cost and time effectiveness on every project.",
     href: "#services",
   },
   {

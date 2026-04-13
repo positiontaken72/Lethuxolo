@@ -11,8 +11,8 @@ const D = "#111111";
 const G = "#555555";
 const LG = "#f4f4f4";
 
-const hdg: React.CSSProperties = { fontFamily: "var(--app-font-heading)" };
-const sans: React.CSSProperties = { fontFamily: "var(--app-font-sans)" };
+const hdg: React.CSSProperties = { fontFamily: "'Montserrat', sans-serif" };
+const sans: React.CSSProperties = { fontFamily: "'Montserrat', sans-serif" };
 
 /* ─── tiny helpers ─── */
 const YBar = ({ h = 6 }: { h?: number }) => (
@@ -206,7 +206,7 @@ function CoverPage() {
           <div style={{ width: 80, height: 4, background: Y, marginBottom: 24 }} />
 
           <p style={{ ...sans, fontSize: 16, color: "rgba(255,255,255,0.65)", maxWidth: 460, lineHeight: 1.7, fontWeight: 300 }}>
-            Your trusted operational partner in mining and heavy industry —
+            Your trusted operational partner in mining and heavy industry
             delivering reliable services across South Africa since 2022.
           </p>
         </div>
@@ -278,8 +278,8 @@ function TocPage() {
   const items = [
     { num: "01", title: "Executive Summary", page: "03" },
     { num: "02", title: "Mission, Vision & Values", page: "04" },
-    { num: "03", title: "Our Core Services — Part I", page: "05" },
-    { num: "04", title: "Our Core Services — Part II", page: "06" },
+    { num: "03", title: "Our Core Services Part I", page: "05" },
+    { num: "04", title: "Our Core Services Part II", page: "06" },
     { num: "05", title: "Why Choose Lethuxolo Trading", page: "07" },
     { num: "06", title: "Compliance & B-BBEE Certification", page: "07" },
     { num: "07", title: "Our Capabilities & Advantages", page: "07" },
@@ -296,7 +296,7 @@ function TocPage() {
             <div style={{ width: 4, height: 40, background: Y }} />
             <div>
               <div style={{ ...sans, fontSize: 9, letterSpacing: "0.35em", color: G, textTransform: "uppercase", marginBottom: 6 }}>
-                Lethuxolo Trading — Company Profile 2025
+                Lethuxolo Trading Company Profile 2025
               </div>
               <div style={{ ...hdg, fontSize: 38, fontWeight: 900, color: D, lineHeight: 1 }}>
                 Table of Contents
@@ -401,13 +401,13 @@ function ExecutiveSummaryPage() {
         <div>
           <p style={{ ...sans, fontSize: 14, color: G, lineHeight: 1.8, marginBottom: 18, fontWeight: 300 }}>
             Lethuxolo Trading is a proudly South African mining and industrial support
-            services company, strategically headquartered in Mpumalanga — the country's
+            services company, strategically headquartered in Mpumalanga the country's
             coal and mining heartland. Founded in 2022, the company was established with a
             clear mandate: to fill the operational gaps that large mining operations face when
             managing logistics, equipment, maintenance, and site services.
           </p>
           <p style={{ ...sans, fontSize: 14, color: G, lineHeight: 1.8, marginBottom: 18, fontWeight: 300 }}>
-            We are more than a service provider. We are an operational partner — built to
+            We are more than a service provider. We are an operational partner built to
             integrate into demanding environments and deliver without disruption. Our team
             operates with a safety-first philosophy, combining industry experience with
             agility to meet the ever-evolving needs of the mining and industrial sectors.
@@ -416,13 +416,13 @@ function ExecutiveSummaryPage() {
             As a Level 1 B-BBEE certified company, Lethuxolo Trading is committed to
             supporting transformation, creating local employment, and growing economic
             participation across Mpumalanga and surrounding communities. We are positioned
-            to scale — deploying quickly, operating reliably, and delivering to specification
+            to scale deploying quickly, operating reliably, and delivering to specification
             on every project we undertake.
           </p>
 
           {/* Key points */}
           {[
-            "Full-spectrum mining support — from logistics to site services",
+            "Full-spectrum mining support from logistics to site services",
             "Rapid mobilisation and deployment across South African operations",
             "Level 1 B-BBEE contributor driving local economic growth",
             "Safety, compliance, and operational discipline at every stage",
@@ -470,7 +470,7 @@ function ExecutiveSummaryPage() {
           </div>
           <div style={{ background: D, padding: "14px 20px" }}>
             <p style={{ ...sans, fontSize: 11, color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>
-              Headquartered in Mpumalanga — South Africa's mining and coal heartland.
+              Headquartered in Mpumalanga South Africa's mining and coal heartland.
             </p>
           </div>
         </div>
@@ -524,14 +524,14 @@ function MissionPage() {
       icon: Target,
       label: "Mission",
       heading: "Our Mission",
-      body: "To provide reliable, safety-driven, and efficient mining and industrial support services that enable our clients to focus on what they do best — while we handle the operational foundation that keeps them running.",
+      body: "To provide reliable, safety-driven, and efficient mining and industrial support services that enable our clients to focus on what they do best while we handle the operational foundation that keeps them running.",
       dark: false,
     },
     {
       icon: Eye,
       label: "Vision",
       heading: "Our Vision",
-      body: "To become the most trusted and preferred mining support services partner in South Africa — recognised for operational excellence, transformation, and community impact.",
+      body: "To become the most trusted and preferred mining support services partner in South Africa recognised for operational excellence, transformation, and community impact.",
       dark: true,
     },
     {
@@ -548,7 +548,7 @@ function MissionPage() {
     { icon: Shield, title: "Safety First", desc: "Zero-compromise approach to protecting people and assets." },
     { icon: Star, title: "Excellence", desc: "Every task executed to the highest possible standard." },
     { icon: Zap, title: "Innovation", desc: "Continuously improving how we deliver value and efficiency." },
-    { icon: Clock, title: "Reliability", desc: "Consistent, on-time, on-spec delivery — every time." },
+    { icon: Clock, title: "Reliability", desc: "Consistent, on-time, on-spec delivery every time." },
     { icon: Users, title: "Community", desc: "Growing local opportunity and driving social impact." },
   ];
 
@@ -746,7 +746,7 @@ function ServicesPage1() {
       category: "Equipment",
       title: "Yellow Plant Machinery",
       image: "/images/service-yellow-plant-lt.jpg",
-      desc: "Provision and operation of excavators, loaders, and dump trucks. Performance and uptime are non-negotiable — rapid mobilisation for any scale of operation, delivered with full operator support.",
+      desc: "Provision and operation of excavators, loaders, and dump trucks. Performance and uptime are non-negotiable rapid mobilisation for any scale of operation, delivered with full operator support.",
       features: [
         "Excavators, loaders & dump trucks",
         "Experienced plant operators",
@@ -775,7 +775,7 @@ function ServicesPage1() {
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 28 }}>
         <h2 style={{ ...hdg, fontSize: 36, fontWeight: 900, color: D }}>
-          What We Deliver — Part I
+          What We Deliver Part I
         </h2>
         <div style={{ ...sans, fontSize: 10, color: G, letterSpacing: "0.1em" }}>
           Showing 3 of 6 services
@@ -798,7 +798,7 @@ function ServicesPage1() {
         }}
       >
         <span style={{ ...sans, fontSize: 10, color: "rgba(255,255,255,0.4)" }}>
-          Lethuxolo Trading — Company Profile 2025
+          Lethuxolo Trading Company Profile 2025
         </span>
         <span style={{ ...hdg, fontSize: 11, color: Y }}>Continued overleaf →</span>
       </div>
@@ -854,11 +854,11 @@ function ServicesPage2() {
 
   return (
     <div className="cp-page" style={{ background: LG, padding: "56px 60px 0", display: "flex", flexDirection: "column" }}>
-      <SectionLabel num="04" title="Our Core Services — Continued" />
+      <SectionLabel num="04" title="Our Core Services Continued" />
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 28 }}>
         <h2 style={{ ...hdg, fontSize: 36, fontWeight: 900, color: D }}>
-          What We Deliver — Part II
+          What We Deliver Part II
         </h2>
         <div style={{ ...sans, fontSize: 10, color: G, letterSpacing: "0.1em" }}>
           Showing 4–6 of 6 services
@@ -899,8 +899,8 @@ function ServicesPage2() {
 function WhyChoosePage() {
   const capabilities = [
     { icon: Shield, title: "Safety First", desc: "Strict adherence to safety and compliance standards. Personnel and assets protected at every stage." },
-    { icon: Clock, title: "Reliability", desc: "Consistent performance in demanding environments — uninterrupted, on-schedule delivery." },
-    { icon: BarChart2, title: "Industry Aligned", desc: "Built specifically for mining — not adapted from general-purpose providers." },
+    { icon: Clock, title: "Reliability", desc: "Consistent performance in demanding environments uninterrupted, on-schedule delivery." },
+    { icon: BarChart2, title: "Industry Aligned", desc: "Built specifically for mining not adapted from general-purpose providers." },
     { icon: TrendingUp, title: "Scalable Operations", desc: "Flexible support from single-site to multi-operation engagements of any scale." },
     { icon: Zap, title: "Operational Efficiency", desc: "Streamlined execution delivering cost-effectiveness and time savings on every project." },
     { icon: Users, title: "Community Driven", desc: "Supporting local economic growth across Mpumalanga through employment and skills." },
@@ -997,7 +997,7 @@ function WhyChoosePage() {
               <span style={{ ...hdg, fontSize: 12, fontWeight: 700, color: D }}>Strategic Location</span>
             </div>
             <p style={{ ...sans, fontSize: 11, color: G, lineHeight: 1.6 }}>
-              Headquartered in Mpumalanga — the heart of South Africa's coal and mining industry — enabling rapid deployment to key operations.
+              Headquartered in Mpumalanga the heart of South Africa's coal and mining industry enabling rapid deployment to key operations.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <Globe size={14} color={Y} />
@@ -1078,7 +1078,7 @@ function ContactPage() {
 
         <p style={{ ...sans, fontSize: 14, color: "rgba(255,255,255,0.5)", maxWidth: 440, lineHeight: 1.8, fontWeight: 300, marginBottom: 52 }}>
           Whether you need operational support, a reliable logistics partner, or specialised
-          industrial services — Lethuxolo Trading mobilises fast and delivers to specification.
+          industrial services Lethuxolo Trading mobilises fast and delivers to specification.
         </p>
 
         {/* Contact cards */}
@@ -1168,7 +1168,7 @@ export default function CompanyProfile() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1218,7 +1218,7 @@ export default function CompanyProfile() {
           border: none;
           cursor: pointer;
           padding: 10px 22px;
-          font-family: 'Barlow Condensed', sans-serif;
+          font-family: 'Montserrat', sans-serif;
           font-size: 12px;
           font-weight: 800;
           letter-spacing: 0.15em;
@@ -1266,10 +1266,10 @@ export default function CompanyProfile() {
             style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "contain", background: "white", padding: 2 }}
           />
           <div>
-            <div style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 800, fontSize: 14, color: "white" }}>
-              Lethuxolo Trading — Company Profile 2025
+            <div style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 800, fontSize: 14, color: "white" }}>
+              Lethuxolo Trading - Company Profile 2025
             </div>
-            <div style={{ fontFamily: "Barlow,sans-serif", fontSize: 10, color: "rgba(255,255,255,0.45)", marginTop: 2 }}>
+            <div style={{ fontFamily: "'Montserrat',sans-serif", fontSize: 10, color: "rgba(255,255,255,0.45)", marginTop: 2 }}>
               8 pages · Mining & Industrial Support Services
             </div>
           </div>
@@ -1278,7 +1278,7 @@ export default function CompanyProfile() {
           <a
             href="/"
             style={{
-              fontFamily: "Barlow,sans-serif",
+              fontFamily: "'Montserrat',sans-serif",
               fontSize: 12,
               color: "rgba(255,255,255,0.55)",
               textDecoration: "none",

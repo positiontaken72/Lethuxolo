@@ -17,11 +17,11 @@ export function AboutIntro() {
             <p className="text-[#555555] text-base md:text-[17px] leading-relaxed mb-4 max-w-lg font-light" style={{ fontFamily: "var(--app-font-sans)" }}>
               Lethuxolo Trading is a South African mining and industrial
               support services company, strategically headquartered in
-              Mpumalanga — the country's coal and mining heartland.
+              Mpumalanga, the country's coal and mining heartland.
             </p>
             <p className="text-[#555555] text-base md:text-[17px] leading-relaxed mb-8 md:mb-10 max-w-lg font-light" style={{ fontFamily: "var(--app-font-sans)" }}>
               We are more than a service provider. We are an operational
-              partner — built to integrate into demanding environments and
+              partner built to integrate into demanding environments and
               deliver without disruption.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

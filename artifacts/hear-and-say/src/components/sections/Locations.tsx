@@ -70,7 +70,7 @@ export function Locations() {
             className="text-white/50 text-base leading-relaxed max-w-md font-light"
             style={{ fontFamily: "var(--app-font-sans)" }}
           >
-            Headquartered in Mpumalanga — South Africa's coal and mining heartland.
+            Headquartered in Mpumalanga, South Africa's coal and mining heartland.
             Positioned to deploy across the region with speed and precision.
           </p>
         </div>

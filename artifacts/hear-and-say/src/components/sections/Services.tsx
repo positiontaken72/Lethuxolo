@@ -6,7 +6,7 @@ const services = [
     title: "Bulk Transportation",
     category: "Logistics",
     description:
-      "Reliable movement of coal, manganese, and steel across supply chains. Full fleet readiness with real-time coordination — keeping operations running without interruption.",
+      "Reliable movement of coal, manganese, and steel across supply chains. Full fleet readiness with real-time coordination, keeping operations running without interruption.",
     image: "/images/service-bulk-transport-lt.webp",
     id: "bulk-transport",
   },
@@ -14,7 +14,7 @@ const services = [
     title: "Yellow Plant Machinery",
     category: "Equipment",
     description:
-      "Provision and operation of excavators, loaders, and dump trucks. Performance and uptime are non-negotiable — rapid mobilization for any scale of operation.",
+      "Provision and operation of excavators, loaders, and dump trucks. Performance and uptime are non-negotiable. Rapid mobilization for any scale of operation.",
     image: "/images/service-yellow-plant-lt.jpg",
     id: "yellow-plant",
   },

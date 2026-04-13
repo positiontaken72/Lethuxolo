@@ -19,7 +19,7 @@ export function CtaBanner() {
             </h2>
             <p className="text-white/50 text-[15px] leading-relaxed mb-8 md:mb-10 max-w-sm">
               Whether you need operational support, a reliable logistics partner,
-              or industrial services — we mobilize fast and deliver to spec.
+              or industrial services. We mobilize fast and deliver to spec.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
