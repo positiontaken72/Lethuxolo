@@ -41,20 +41,20 @@ const capabilities = [
 
 export function WhyChooseUs() {
   return (
-    <section id="about" className="bg-[#F5F5F5] py-20 md:py-28">
+    <section id="about" className="bg-[#F5F5F5] py-16 md:py-28">
       <div className="container mx-auto px-6 md:px-8">
 
         {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 pb-10 border-b border-[#111111]/10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-10 md:mb-12 pb-8 md:pb-10 border-b border-[#111111]/10">
           <div>
             <p
-              className="text-[9px] tracking-[0.45em] uppercase font-bold text-[#ffd200] mb-5"
+              className="text-[9px] tracking-[0.45em] uppercase font-bold text-[#ffd200] mb-4 md:mb-5"
               style={{ fontFamily: "var(--app-font-heading)" }}
             >
               Our Capabilities
             </p>
             <h2
-              className="text-4xl md:text-5xl font-extrabold text-[#111111] leading-tight"
+              className="text-3xl md:text-5xl font-extrabold text-[#111111] leading-tight"
               style={{ fontFamily: "var(--app-font-heading)" }}
             >
               Why Lethuxolo<br />Trading.
@@ -69,15 +69,15 @@ export function WhyChooseUs() {
           </p>
         </div>
 
-        {/* Clean grid — horizontal dividers only, no broken vertical lines */}
+        {/* Grid — container border-l creates left edge; each item adds right + bottom */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-[#111111]/10">
           {capabilities.map((cap, i) => (
             <div
               key={i}
-              className="border-b border-r border-[#111111]/10 py-10 px-8 group"
+              className="border-b border-r border-[#111111]/10 py-8 md:py-10 px-6 md:px-8 group"
             >
               {/* Yellow rule */}
-              <div className="w-8 h-[3px] bg-[#ffd200] mb-6" />
+              <div className="w-8 h-[3px] bg-[#ffd200] mb-5 md:mb-6" />
 
               <h3
                 className="text-[1.05rem] font-bold text-[#111111] mb-3 leading-snug"
@@ -86,7 +86,7 @@ export function WhyChooseUs() {
                 {cap.title}
               </h3>
               <p
-                className="text-[#666666] text-[13.5px] leading-relaxed mb-7 font-light"
+                className="text-[#666666] text-[13.5px] leading-relaxed mb-6 md:mb-7 font-light"
                 style={{ fontFamily: "var(--app-font-sans)" }}
               >
                 {cap.description}

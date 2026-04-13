@@ -93,13 +93,13 @@ export function Services() {
     <section id="services" className="bg-white">
 
       {/* White header strip */}
-      <div className="container mx-auto px-6 md:px-8 pt-20 pb-10">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div className="container mx-auto px-6 md:px-8 pt-16 md:pt-20 pb-8 md:pb-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6">
           <div>
-            <p className="text-[10px] tracking-[0.38em] uppercase font-bold text-[#ffd200] mb-4" style={{ fontFamily: "var(--app-font-heading)" }}>
+            <p className="text-[10px] tracking-[0.38em] uppercase font-bold text-[#ffd200] mb-3 md:mb-4" style={{ fontFamily: "var(--app-font-heading)" }}>
               What We Deliver
             </p>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#111111] leading-tight" style={{ fontFamily: "var(--app-font-heading)" }}>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-[#111111] leading-tight" style={{ fontFamily: "var(--app-font-heading)" }}>
               Our Services
             </h2>
           </div>
@@ -113,7 +113,7 @@ export function Services() {
       {/* Cinematic panel */}
       <div
         className="relative w-full overflow-hidden"
-        style={{ height: "clamp(480px, 62vh, 700px)" }}
+        style={{ height: "clamp(420px, 62vh, 700px)" }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -129,12 +129,11 @@ export function Services() {
               alt={service.title}
               className="w-full h-full object-cover object-center"
             />
-            {/* Cinematic dark overlay — left heavier for text */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.50) 45%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.05) 100%)",
+                  "linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.60) 45%, rgba(0,0,0,0.25) 75%, rgba(0,0,0,0.10) 100%)",
               }}
             />
           </div>
@@ -146,10 +145,10 @@ export function Services() {
           {/* Service info — vertically centered */}
           <div className="flex-1 flex items-center">
             <div className="container mx-auto px-6 md:px-8">
-              <div className="max-w-xl">
+              <div className="max-w-xl w-full">
 
                 {/* Category + counter */}
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4 md:mb-6">
                   <span className="text-[#ffd200] text-[10px] tracking-[0.35em] uppercase font-bold">
                     {services[active].category}
                   </span>
@@ -160,12 +159,12 @@ export function Services() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-5 tracking-tight">
+                <h3 className="text-2xl md:text-5xl font-bold text-white leading-tight mb-3 md:mb-5 tracking-tight">
                   {services[active].title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-white/65 text-sm md:text-base leading-relaxed max-w-md mb-8">
+                <p className="text-white/65 text-sm leading-relaxed max-w-md mb-6 md:mb-8">
                   {services[active].description}
                 </p>
 
@@ -208,12 +207,12 @@ export function Services() {
               <div className="flex md:hidden items-center justify-between py-4">
                 <button
                   onClick={goPrev}
-                  className="w-9 h-9 flex items-center justify-center text-white/50 hover:text-white transition-colors"
+                  className="w-10 h-10 flex items-center justify-center text-white/50 hover:text-white transition-colors"
                   aria-label="Previous"
                 >
                   <ArrowLeft className="w-5 h-5" />
                 </button>
-                <div className="text-center">
+                <div className="text-center px-4">
                   <p className="text-white text-xs font-bold uppercase tracking-wider">
                     {services[active].title}
                   </p>
@@ -223,7 +222,7 @@ export function Services() {
                 </div>
                 <button
                   onClick={goNext}
-                  className="w-9 h-9 flex items-center justify-center text-white/50 hover:text-white transition-colors"
+                  className="w-10 h-10 flex items-center justify-center text-white/50 hover:text-white transition-colors"
                   aria-label="Next"
                 >
                   <ArrowRight className="w-5 h-5" />
@@ -234,17 +233,17 @@ export function Services() {
           </div>
         </div>
 
-        {/* Side arrow controls — desktop */}
+        {/* Side arrow controls — desktop only */}
         <button
           onClick={goPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-none bg-white/10 hover:bg-[#ffd200] border border-white/20 hover:border-[#ffd200] flex items-center justify-center transition-all duration-200 hidden md:flex group"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-none bg-white/10 hover:bg-[#ffd200] border border-white/20 hover:border-[#ffd200] items-center justify-center transition-all duration-200 hidden md:flex group"
           aria-label="Previous service"
         >
           <ArrowLeft className="w-4 h-4 text-white group-hover:text-[#111111]" />
         </button>
         <button
           onClick={goNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-none bg-white/10 hover:bg-[#ffd200] border border-white/20 hover:border-[#ffd200] flex items-center justify-center transition-all duration-200 hidden md:flex group"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-none bg-white/10 hover:bg-[#ffd200] border border-white/20 hover:border-[#ffd200] items-center justify-center transition-all duration-200 hidden md:flex group"
           aria-label="Next service"
         >
           <ArrowRight className="w-4 h-4 text-white group-hover:text-[#111111]" />

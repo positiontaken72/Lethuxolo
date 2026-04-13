@@ -52,16 +52,16 @@ export function Locations() {
     <section id="locations" className="bg-[#111111] text-white overflow-hidden">
 
       {/* Top: Headline */}
-      <div className="container mx-auto px-4 md:px-8 py-16 md:py-24">
+      <div className="container mx-auto px-6 md:px-8 py-14 md:py-24">
         <div className="max-w-2xl">
           <p
-            className="text-[10px] tracking-[0.35em] uppercase text-[#ffd200] mb-5 font-bold"
+            className="text-[10px] tracking-[0.35em] uppercase text-[#ffd200] mb-4 md:mb-5 font-bold"
             style={{ fontFamily: "var(--app-font-heading)" }}
           >
             Operational Reach
           </p>
           <h2
-            className="text-4xl md:text-5xl font-extrabold leading-tight mb-6"
+            className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 md:mb-6"
             style={{ fontFamily: "var(--app-font-heading)" }}
           >
             Where We<br />Operate
@@ -77,26 +77,22 @@ export function Locations() {
       </div>
 
       {/* Bottom: metric strip */}
-      <div className="border-t border-white/8">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4">
+      <div className="border-t border-white/[0.08]">
+        <div className="container mx-auto px-6 md:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.08]">
             {metrics.map((m, i) => (
               <div
                 key={i}
-                className={`py-10 md:py-12 flex flex-col gap-2 ${
-                  i < metrics.length - 1
-                    ? "border-r border-white/8 pr-6 md:pr-10 mr-6 md:mr-0"
-                    : ""
-                } ${i > 0 ? "md:pl-10" : ""}`}
+                className="py-8 md:py-12 flex flex-col gap-2 px-4 md:px-10 first:pl-0 [&:nth-child(2)]:pr-0 md:[&:nth-child(2)]:pr-10 [&:nth-child(3)]:pl-4 md:[&:nth-child(3)]:pl-10 last:pr-0"
               >
                 <p
-                  className="text-[#ffd200] text-4xl md:text-5xl font-bold leading-none tracking-tight"
+                  className="text-[#ffd200] text-3xl md:text-5xl font-bold leading-none tracking-tight"
                   style={{ fontFamily: "var(--app-font-heading)" }}
                 >
                   <CountUp target={m.value} />
                 </p>
                 <p
-                  className="text-white/40 text-xs tracking-wide leading-relaxed uppercase font-medium"
+                  className="text-white/40 text-[10px] md:text-xs tracking-wide leading-relaxed uppercase font-medium"
                   style={{ fontFamily: "var(--app-font-sans)" }}
                 >
                   {m.label}

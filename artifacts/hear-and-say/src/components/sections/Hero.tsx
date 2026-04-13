@@ -63,7 +63,7 @@ export function Hero() {
   return (
     <section
       className="relative w-full overflow-hidden bg-[#111111]"
-      style={{ height: "clamp(380px, 52vw, 520px)" }}
+      style={{ height: "clamp(480px, 80vw, 520px)" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -71,57 +71,74 @@ export function Hero() {
       {slides.map((slide, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-700 ease-in-out flex"
+          className="absolute inset-0 transition-opacity duration-700 ease-in-out"
           style={{ opacity: active === i ? 1 : 0 }}
         >
-          {/* LEFT PANEL — dark overlay, text here */}
-          <div className="relative w-[46%] h-full overflow-hidden">
+          {/* Mobile: single full-width image with heavy dark overlay */}
+          <div className="absolute inset-0 md:hidden">
             <img
               src={slide.image}
               alt={slide.title}
-              className="absolute inset-0 w-full h-full object-cover object-center"
-              style={{ transform: "scale(1.04)" }}
+              className="w-full h-full object-cover object-center"
             />
-            {/* Heavy dark veil for text legibility */}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.68) 75%, rgba(0,0,0,0.55) 100%)",
+                  "linear-gradient(160deg, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.60) 60%, rgba(0,0,0,0.35) 100%)",
               }}
             />
           </div>
 
-          {/* RIGHT PANEL — bright, lighter treatment */}
-          <div className="relative w-[54%] h-full overflow-hidden">
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className="absolute inset-0 w-full h-full object-cover object-center"
-            />
-            {/* Subtle veil only — keeps image bright */}
-            <div
-              className="absolute inset-0"
-              style={{ background: "rgba(0,0,0,0.12)" }}
-            />
-            {/* Left-edge fade to blend panels */}
-            <div
-              className="absolute inset-y-0 left-0 w-20"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(0,0,0,0.55) 0%, transparent 100%)",
-              }}
-            />
+          {/* Desktop: split panel */}
+          <div className="hidden md:flex absolute inset-0">
+            {/* LEFT PANEL — dark overlay, text here */}
+            <div className="relative w-[46%] h-full overflow-hidden">
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                style={{ transform: "scale(1.04)" }}
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.68) 75%, rgba(0,0,0,0.55) 100%)",
+                }}
+              />
+            </div>
+
+            {/* RIGHT PANEL — bright, lighter treatment */}
+            <div className="relative w-[54%] h-full overflow-hidden">
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: "rgba(0,0,0,0.12)" }}
+              />
+              <div
+                className="absolute inset-y-0 left-0 w-20"
+                style={{
+                  background:
+                    "linear-gradient(to right, rgba(0,0,0,0.55) 0%, transparent 100%)",
+                }}
+              />
+            </div>
           </div>
         </div>
       ))}
 
       {/* ── Text overlay — sits above both panels ── */}
       <div className="absolute inset-0 z-10 flex items-center">
-        <div className="w-[46%] px-8 md:px-12 lg:px-16">
+        {/* Mobile: full width. Desktop: left 46% only */}
+        <div className="w-full md:w-[46%] px-6 md:px-12 lg:px-16">
           {/* Overline */}
           <p
-            className="text-[#ffd200] text-[10px] tracking-[0.4em] uppercase font-bold mb-5"
+            className="text-[#ffd200] text-[10px] tracking-[0.4em] uppercase font-bold mb-4 md:mb-5"
             style={{ fontFamily: "var(--app-font-sans)" }}
           >
             {slides[active].label}
@@ -129,10 +146,10 @@ export function Hero() {
 
           {/* Headline */}
           <h1
-            className="text-white font-black leading-[1.05] mb-4"
+            className="text-white font-black leading-[1.05] mb-3 md:mb-4"
             style={{
               fontFamily: "var(--app-font-heading)",
-              fontSize: "clamp(1.7rem, 3.2vw, 2.6rem)",
+              fontSize: "clamp(1.85rem, 7vw, 2.6rem)",
             }}
           >
             {slides[active].title.split("\n").map((line, idx) => (
@@ -145,25 +162,25 @@ export function Hero() {
 
           {/* Sub-label */}
           <p
-            className="text-white/55 text-[12.5px] mb-7"
+            className="text-white/55 text-[12.5px] mb-6 md:mb-7"
             style={{ fontFamily: "var(--app-font-sans)" }}
           >
             {slides[active].sub}
           </p>
 
-          {/* CTA — Download Company Profile */}
+          {/* CTA */}
           <a
             href="#contact"
-            className="inline-flex items-center gap-2.5 bg-[#ffd200] hover:bg-[#e6c400] text-[#111111] px-5 py-3 text-[11.5px] font-bold tracking-[0.1em] uppercase transition-colors group"
+            className="inline-flex items-center gap-2.5 bg-[#ffd200] hover:bg-[#e6c400] text-[#111111] px-5 py-3 text-[11px] font-bold tracking-[0.1em] uppercase transition-colors group"
             style={{ fontFamily: "var(--app-font-heading)" }}
           >
             Download Company Profile
-            <Download className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
+            <Download className="w-3.5 h-3.5 flex-shrink-0 group-hover:translate-y-0.5 transition-transform" />
           </a>
         </div>
       </div>
 
-      {/* ── Centered slide counter — Arcadis signature ── */}
+      {/* ── Centered slide counter ── */}
       <div className="absolute bottom-5 left-0 right-0 z-20 flex items-center justify-center gap-4">
         <button
           onClick={prev}
@@ -189,7 +206,7 @@ export function Hero() {
         </button>
       </div>
 
-      {/* ── Yellow accent bar — Arcadis signature ── */}
+      {/* ── Yellow accent bar ── */}
       <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-[#ffd200] z-20" />
     </section>
   );
